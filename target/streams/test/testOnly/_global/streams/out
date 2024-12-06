@@ -1,0 +1,39 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: Vector()[0m
+[0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunner for org.scalatest.tools.Framework produced 1 initial tasks for 1 tests.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(vexriscv.TCC_pipeline, sbt.ForkMain$SubclassFingerscan@7e0ea639, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTCC_pipeline:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: False - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: False - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: True - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: True - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: True - BarrielShifter: True_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: True - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: False - BarrielShifter: True_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenTwoStage (RISC-V I) - Bypass: False - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: False - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: False - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: True - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: True - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: True - BarrielShifter: True_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: True - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: False - BarrielShifter: True_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: False - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: True_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: True_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- final_report[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 25 events.[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 minute, 34 seconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 25[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 25, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	vexriscv.TCC_pipeline[0m

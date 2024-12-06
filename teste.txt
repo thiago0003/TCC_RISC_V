@@ -1,0 +1,2959 @@
+[info] welcome to sbt 1.6.0 (Ubuntu Java 11.0.25)
+[info] loading settings for project vexriscv-build from plugins.sbt ...
+[info] loading project definition from /home/martins/Documents/VexRiscv/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to VexRiscv (in build file:/home/martins/Documents/VexRiscv/)
+[info] compiling 1 Scala source to /home/martins/Documents/VexRiscv/target/scala-2.12/test-classes ...
+[info] done compiling
+[info] TCC_pipeline:
+[Runtime] SpinalHDL v1.10.2a    git head : a348a60b7e8b6a455c72e1536ec3d74a2ea16935
+[Runtime] JVM max memory : 3920.0MiB
+[Runtime] Current date : 2024.12.01 18:08:31
+[Progress] at 0.000 : Elaborate components
+[Warning] This VexRiscv configuration is set without software ebreak instruction support. Some software may rely on it (ex: Rust). (This isn't related to JTAG ebreak)
+[Warning] This VexRiscv configuration is set without illegal instruction catch support. Some software may rely on it (ex: Rust)
+[Progress] at 0.586 : Checks and transforms
+[Progress] at 0.850 : Generate Verilog to .
+[Warning] 82 signals were pruned. You can call printPruned on the backend report to get more informations.
+[Done] at 1.070
+[info] - GenSimpleTwoStage (RISC-V I)_gen
+rm -rf obj_dir
+cp ../../../../VexRiscv.v*.bin . | true
+verilator -cc  ../../../../VexRiscv.v  -O3 -CFLAGS -std=c++11 -LDFLAGS -pthread  -CFLAGS -DREGRESSION_PATH='\".//\"' -CFLAGS -DIBUS_SIMPLE -CFLAGS -DIBUS_DATA_WIDTH=32 -CFLAGS -DDBUS_LOAD_DATA_WIDTH=32 -CFLAGS -DDBUS_STORE_DATA_WIDTH=32 -CFLAGS -DDBUS_SIMPLE -CFLAGS -DREDO=10 -CFLAGS -pthread -CFLAGS -Wno-unused-result -CFLAGS -Wno-parentheses -CFLAGS -Wno-misleading-indentation -CFLAGS -Wno-catch-value -CFLAGS -Wno-float-conversion -CFLAGS -DTHREAD_COUNT=12 -CFLAGS -O3  -O3 -CFLAGS -DCOREMARK -CFLAGS -DWITH_RISCV_REF -CFLAGS -DTIMER_INTERRUPT -CFLAGS -DEXTERNAL_INTERRUPT -CFLAGS -DDHRYSTONE -CFLAGS -DSTALL=1 -CFLAGS -DISA_TEST -CFLAGS -DTRACE_START=0 --gdbbt  -Wno-UNOPTFLAT -Wno-WIDTH --x-assign unique --exe main.cpp
+No stack.
+make  -j12 -C obj_dir/ -f VVexRiscv.mk VVexRiscv
+make[1]: Entering directory '/home/martins/Documents/VexRiscv/src/test/cpp/regression/obj_dir'
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o main.o ../main.cpp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o verilated_dpi.o /usr/local/share/verilator/include/verilated_dpi.cpp
+/usr/bin/perl /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include VVexRiscv.cpp VVexRiscv___024root__DepSet_hcd8610ab__0.cpp VVexRiscv___024root__DepSet_h0c12cad5__0.cpp VVexRiscv_VexRiscv__DepSet_hd894e8a5__0.cpp VVexRiscv_VexRiscv__DepSet_hd4e48a5e__0.cpp VVexRiscv__Dpi.cpp VVexRiscv__ConstPool_0.cpp VVexRiscv___024root__Slow.cpp VVexRiscv___024root__DepSet_hcd8610ab__0__Slow.cpp VVexRiscv___024root__DepSet_h0c12cad5__0__Slow.cpp VVexRiscv_VexRiscv__Slow.cpp VVexRiscv_VexRiscv__DepSet_hd894e8a5__0__Slow.cpp VVexRiscv_VexRiscv__DepSet_hd4e48a5e__0__Slow.cpp VVexRiscv__Syms.cpp > VVexRiscv__ALL.cpp
+echo "" > VVexRiscv__ALL.verilator_deplist.tmp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o VVexRiscv__ALL.o VVexRiscv__ALL.cpp
+Archive ar -rcs VVexRiscv__ALL.a VVexRiscv__ALL.o
+g++    main.o verilated.o verilated_dpi.o VVexRiscv__ALL.a   -pthread    -o VVexRiscv
+rm VVexRiscv__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/martins/Documents/VexRiscv/src/test/cpp/regression/obj_dir'
+./obj_dir/VVexRiscv
+BOOT
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Please give the number of runs through the benchmark: 
+Execution starts, 200 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           A
+        should be:   A
+Ch_2_Glob:           B
+        should be:   B
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    210
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+Clock cycles=192563 
+DMIPS per Mhz:                              0.59
+SUCCESS dhrystoneO3_Stall
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Please give the number of runs through the benchmark: 
+Execution starts, 200 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           A
+        should be:   A
+Ch_2_Glob:           B
+        should be:   B
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    210
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+Clock cycles=138620 
+DMIPS per Mhz:                              0.82
+SUCCESS dhrystoneO3
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 16940714
+Total time (secs): 169
+Iterations/Sec   : 0
+Iterations       : 10
+Compiler version : GCC8.2.0
+Compiler flags   : -O3 -g -DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0  
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xfcaf
+Correct operation validated. See README.md for run and reporting rules.
+SUCCESS coremark_rv32i_stall
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 12888481
+Total time (secs): 128
+Iterations/Sec   : 0
+Iterations       : 10
+Compiler version : GCC8.2.0
+Compiler flags   : -O3 -g -DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0  
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xfcaf
+Correct operation validated. See README.md for run and reporting rules.
+SUCCESS coremark_rv32i_nostall
+
+****************************************************************
+Had simulate 30947168 clock cycles in 5.08454 s (6086.53 Khz)
+REGRESSION SUCCESS 794/794
+****************************************************************
+
+[info] - GenSimpleTwoStage (RISC-V I)_test
+[Runtime] SpinalHDL v1.10.2a    git head : a348a60b7e8b6a455c72e1536ec3d74a2ea16935
+[Runtime] JVM max memory : 3920.0MiB
+[Runtime] Current date : 2024.12.01 18:08:39
+[Progress] at 8.257 : Elaborate components
+[Warning] This VexRiscv configuration is set without software ebreak instruction support. Some software may rely on it (ex: Rust). (This isn't related to JTAG ebreak)
+[Warning] This VexRiscv configuration is set without illegal instruction catch support. Some software may rely on it (ex: Rust)
+[Progress] at 8.360 : Checks and transforms
+[Progress] at 8.410 : Generate Verilog to .
+[Warning] 94 signals were pruned. You can call printPruned on the backend report to get more informations.
+[Done] at 8.465
+[info] - GenSimpleThreeStage (RISC-V I)_gen
+rm -rf obj_dir
+cp ../../../../VexRiscv.v*.bin . | true
+verilator -cc  ../../../../VexRiscv.v  -O3 -CFLAGS -std=c++11 -LDFLAGS -pthread  -CFLAGS -DREGRESSION_PATH='\".//\"' -CFLAGS -DIBUS_SIMPLE -CFLAGS -DIBUS_DATA_WIDTH=32 -CFLAGS -DDBUS_LOAD_DATA_WIDTH=32 -CFLAGS -DDBUS_STORE_DATA_WIDTH=32 -CFLAGS -DDBUS_SIMPLE -CFLAGS -DREDO=10 -CFLAGS -pthread -CFLAGS -Wno-unused-result -CFLAGS -Wno-parentheses -CFLAGS -Wno-misleading-indentation -CFLAGS -Wno-catch-value -CFLAGS -Wno-float-conversion -CFLAGS -DTHREAD_COUNT=12 -CFLAGS -O3  -O3 -CFLAGS -DCOREMARK -CFLAGS -DWITH_RISCV_REF -CFLAGS -DTIMER_INTERRUPT -CFLAGS -DEXTERNAL_INTERRUPT -CFLAGS -DDHRYSTONE -CFLAGS -DSTALL=1 -CFLAGS -DISA_TEST -CFLAGS -DTRACE_START=0 --gdbbt  -Wno-UNOPTFLAT -Wno-WIDTH --x-assign unique --exe main.cpp
+No stack.
+make  -j12 -C obj_dir/ -f VVexRiscv.mk VVexRiscv
+make[1]: Entering directory '/home/martins/Documents/VexRiscv/src/test/cpp/regression/obj_dir'
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o main.o ../main.cpp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o verilated_dpi.o /usr/local/share/verilator/include/verilated_dpi.cpp
+/usr/bin/perl /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include VVexRiscv.cpp VVexRiscv___024root__DepSet_hcd8610ab__0.cpp VVexRiscv___024root__DepSet_h0c12cad5__0.cpp VVexRiscv_VexRiscv__DepSet_hd894e8a5__0.cpp VVexRiscv_VexRiscv__DepSet_hd4e48a5e__0.cpp VVexRiscv__Dpi.cpp VVexRiscv__ConstPool_0.cpp VVexRiscv___024root__Slow.cpp VVexRiscv___024root__DepSet_hcd8610ab__0__Slow.cpp VVexRiscv___024root__DepSet_h0c12cad5__0__Slow.cpp VVexRiscv_VexRiscv__Slow.cpp VVexRiscv_VexRiscv__DepSet_hd894e8a5__0__Slow.cpp VVexRiscv_VexRiscv__DepSet_hd4e48a5e__0__Slow.cpp VVexRiscv__Syms.cpp > VVexRiscv__ALL.cpp
+echo "" > VVexRiscv__ALL.verilator_deplist.tmp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o VVexRiscv__ALL.o VVexRiscv__ALL.cpp
+Archive ar -rcs VVexRiscv__ALL.a VVexRiscv__ALL.o
+g++    main.o verilated.o verilated_dpi.o VVexRiscv__ALL.a   -pthread    -o VVexRiscv
+rm VVexRiscv__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/martins/Documents/VexRiscv/src/test/cpp/regression/obj_dir'
+./obj_dir/VVexRiscv
+BOOT
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Please give the number of runs through the benchmark: 
+Execution starts, 200 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           A
+        should be:   A
+Ch_2_Glob:           B
+        should be:   B
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    210
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+Clock cycles=192699 
+DMIPS per Mhz:                              0.59
+SUCCESS dhrystoneO3_Stall
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Please give the number of runs through the benchmark: 
+Execution starts, 200 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           A
+        should be:   A
+Ch_2_Glob:           B
+        should be:   B
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    210
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+Clock cycles=144020 
+DMIPS per Mhz:                              0.79
+SUCCESS dhrystoneO3
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 17738061
+Total time (secs): 177
+Iterations/Sec   : 0
+Iterations       : 10
+Compiler version : GCC8.2.0
+Compiler flags   : -O3 -g -DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0  
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xfcaf
+Correct operation validated. See README.md for run and reporting rules.
+SUCCESS coremark_rv32i_stall
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 14528360
+Total time (secs): 145
+Iterations/Sec   : 0
+Iterations       : 10
+Compiler version : GCC8.2.0
+Compiler flags   : -O3 -g -DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0  
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xfcaf
+Correct operation validated. See README.md for run and reporting rules.
+SUCCESS coremark_rv32i_nostall
+
+****************************************************************
+Had simulate 33440345 clock cycles in 5.57526 s (5997.99 Khz)
+REGRESSION SUCCESS 794/794
+****************************************************************
+
+[info] - GenSimpleThreeStage (RISC-V I)_test
+[Runtime] SpinalHDL v1.10.2a    git head : a348a60b7e8b6a455c72e1536ec3d74a2ea16935
+[Runtime] JVM max memory : 3920.0MiB
+[Runtime] Current date : 2024.12.01 18:08:47
+[Progress] at 16.126 : Elaborate components
+[Warning] This VexRiscv configuration is set without software ebreak instruction support. Some software may rely on it (ex: Rust). (This isn't related to JTAG ebreak)
+[Warning] This VexRiscv configuration is set without illegal instruction catch support. Some software may rely on it (ex: Rust)
+[Progress] at 16.267 : Checks and transforms
+[Progress] at 16.323 : Generate Verilog to .
+[Warning] 106 signals were pruned. You can call printPruned on the backend report to get more informations.
+[Done] at 16.353
+[info] - GenSimpleFourStage (RISC-V I)_gen
+rm -rf obj_dir
+cp ../../../../VexRiscv.v*.bin . | true
+verilator -cc  ../../../../VexRiscv.v  -O3 -CFLAGS -std=c++11 -LDFLAGS -pthread  -CFLAGS -DREGRESSION_PATH='\".//\"' -CFLAGS -DIBUS_SIMPLE -CFLAGS -DIBUS_DATA_WIDTH=32 -CFLAGS -DDBUS_LOAD_DATA_WIDTH=32 -CFLAGS -DDBUS_STORE_DATA_WIDTH=32 -CFLAGS -DDBUS_SIMPLE -CFLAGS -DREDO=10 -CFLAGS -pthread -CFLAGS -Wno-unused-result -CFLAGS -Wno-parentheses -CFLAGS -Wno-misleading-indentation -CFLAGS -Wno-catch-value -CFLAGS -Wno-float-conversion -CFLAGS -DTHREAD_COUNT=12 -CFLAGS -O3  -O3 -CFLAGS -DCOREMARK -CFLAGS -DWITH_RISCV_REF -CFLAGS -DTIMER_INTERRUPT -CFLAGS -DEXTERNAL_INTERRUPT -CFLAGS -DDHRYSTONE -CFLAGS -DSTALL=1 -CFLAGS -DISA_TEST -CFLAGS -DTRACE_START=0 --gdbbt  -Wno-UNOPTFLAT -Wno-WIDTH --x-assign unique --exe main.cpp
+No stack.
+make  -j12 -C obj_dir/ -f VVexRiscv.mk VVexRiscv
+make[1]: Entering directory '/home/martins/Documents/VexRiscv/src/test/cpp/regression/obj_dir'
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o main.o ../main.cpp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o verilated.o /usr/local/share/verilator/include/verilated.cpp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o verilated_dpi.o /usr/local/share/verilator/include/verilated_dpi.cpp
+/usr/bin/perl /usr/local/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include VVexRiscv.cpp VVexRiscv___024root__DepSet_hcd8610ab__0.cpp VVexRiscv___024root__DepSet_h0c12cad5__0.cpp VVexRiscv_VexRiscv__DepSet_hd894e8a5__0.cpp VVexRiscv_VexRiscv__DepSet_hd4e48a5e__0.cpp VVexRiscv__Dpi.cpp VVexRiscv__ConstPool_0.cpp VVexRiscv___024root__Slow.cpp VVexRiscv___024root__DepSet_hcd8610ab__0__Slow.cpp VVexRiscv___024root__DepSet_h0c12cad5__0__Slow.cpp VVexRiscv_VexRiscv__Slow.cpp VVexRiscv_VexRiscv__DepSet_hd894e8a5__0__Slow.cpp VVexRiscv_VexRiscv__DepSet_hd4e48a5e__0__Slow.cpp VVexRiscv__Syms.cpp > VVexRiscv__ALL.cpp
+echo "" > VVexRiscv__ALL.verilator_deplist.tmp
+g++  -I.  -MMD -I/usr/local/share/verilator/include -I/usr/local/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow     -std=c++11 -DREGRESSION_PATH=\".//\" -DIBUS_SIMPLE -DIBUS_DATA_WIDTH=32 -DDBUS_LOAD_DATA_WIDTH=32 -DDBUS_STORE_DATA_WIDTH=32 -DDBUS_SIMPLE -DREDO=10 -pthread -Wno-unused-result -Wno-parentheses -Wno-misleading-indentation -Wno-catch-value -Wno-float-conversion -DTHREAD_COUNT=12 -O3 -DCOREMARK -DWITH_RISCV_REF -DTIMER_INTERRUPT -DEXTERNAL_INTERRUPT -DDHRYSTONE -DSTALL=1 -DISA_TEST -DTRACE_START=0  -std=gnu++14 -Os -c -o VVexRiscv__ALL.o VVexRiscv__ALL.cpp
+Archive ar -rcs VVexRiscv__ALL.a VVexRiscv__ALL.o
+g++    main.o verilated.o verilated_dpi.o VVexRiscv__ALL.a   -pthread    -o VVexRiscv
+rm VVexRiscv__ALL.verilator_deplist.tmp
+make[1]: Leaving directory '/home/martins/Documents/VexRiscv/src/test/cpp/regression/obj_dir'
+./obj_dir/VVexRiscv
+BOOT
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-IO
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-NOP-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-LUI-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADD-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-ADDI-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-AND-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-ANDI-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-SUB-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-OR-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-ORI-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XOR-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-XORI-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRA-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRAI-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRL-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SRLI-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLL-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLLI-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLT-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTI-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTIU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-SLTU-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-AUIPC-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BEQ-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGE-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BGEU-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLT-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BLTU-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-BNE-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JAL-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-JALR-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-DELAY_SLOTS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-ENDIANESS-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_size-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_width-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-RF_x0-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LB-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LBU-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LH-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LHU-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-LW-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SB-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SH-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS I-SW-01
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-lui
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-auipc
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jal
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-jalr
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-beq
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bge
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-bgeu
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-blt
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bltu
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-bne
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-add
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-addi
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-and
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-andi
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-or
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-ori
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-sll
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slli
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slt
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-slti
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-sra
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srai
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srl
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-srli
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-sub
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xor
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-xori
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lb
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lbu
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lh
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lhu
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-lw
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sb
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sh
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+SUCCESS rv32ui-p-sw
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Please give the number of runs through the benchmark: 
+Execution starts, 200 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           A
+        should be:   A
+Ch_2_Glob:           B
+        should be:   B
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    210
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+Clock cycles=210940 
+DMIPS per Mhz:                              0.53
+SUCCESS dhrystoneO3_Stall
+
+Dhrystone Benchmark, Version 2.1 (Language: C)
+
+Program compiled without 'register' attribute
+
+Please give the number of runs through the benchmark: 
+Execution starts, 200 runs through Dhrystone
+Execution ends
+
+Final values of the variables used in the benchmark:
+
+Int_Glob:            5
+        should be:   5
+Bool_Glob:           1
+        should be:   1
+Ch_1_Glob:           A
+        should be:   A
+Ch_2_Glob:           B
+        should be:   B
+Arr_1_Glob[8]:       7
+        should be:   7
+Arr_2_Glob[8][7]:    210
+        should be:   Number_Of_Runs + 10
+Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent)
+  Discr:             0
+        should be:   0
+  Enum_Comp:         2
+        should be:   2
+  Int_Comp:          17
+        should be:   17
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Next_Ptr_Glob->
+  Ptr_Comp:          -2147458812
+        should be:   (implementation-dependent), same as above
+  Discr:             0
+        should be:   0
+  Enum_Comp:         1
+        should be:   1
+  Int_Comp:          18
+        should be:   18
+  Str_Comp:          DHRYSTONE PROGRAM, SOME STRING
+        should be:   DHRYSTONE PROGRAM, SOME STRING
+Int_1_Loc:           5
+        should be:   5
+Int_2_Loc:           13
+        should be:   13
+Int_3_Loc:           7
+        should be:   7
+Enum_Loc:            1
+        should be:   1
+Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
+        should be:   DHRYSTONE PROGRAM, 1'ST STRING
+Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
+        should be:   DHRYSTONE PROGRAM, 2'ND STRING
+
+Clock cycles=167423 
+DMIPS per Mhz:                              0.67
+SUCCESS dhrystoneO3
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 19607727
+Total time (secs): 196
+Iterations/Sec   : 0
+Iterations       : 10
+Compiler version : GCC8.2.0
+Compiler flags   : -O3 -g -DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0  
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xfcaf
+Correct operation validated. See README.md for run and reporting rules.
+SUCCESS coremark_rv32i_stall
+2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 16980320
+Total time (secs): 169
+Iterations/Sec   : 0
+Iterations       : 10
+Compiler version : GCC8.2.0
+Compiler flags   : -O3 -g -DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0  
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0xfcaf
+Correct operation validated. See README.md for run and reporting rules.
+SUCCESS coremark_rv32i_nostall
+
+****************************************************************
+Had simulate 37904410 clock cycles in 5.78894 s (6547.72 Khz)
+REGRESSION SUCCESS 794/794
+****************************************************************
+
+[info] - GenSimpleFourStage (RISC-V I)_test
+GenSimpleTwoStage (RISC-V I) -> 0.82 DMIPS/MHz 0.7758866231016673 Coremark/MHz
+GenSimpleThreeStage (RISC-V I) -> 0.79 DMIPS/MHz 0.688308935075948 Coremark/MHz
+GenSimpleFourStage (RISC-V I) -> 0.67 DMIPS/MHz 0.5889170522110302 Coremark/MHz
+
+[info] - final_report
+[info] Run completed in 25 seconds, 377 milliseconds.
+[info] Total number of tests run: 7
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 7, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 30 s, completed Dec 1, 2024, 6:08:56 PM

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite hostname="pop-os" name="vexriscv.DhrystoneBench" tests="37" errors="0" failures="0" skipped="0" time="123.194" timestamp="2024-11-27T10:41:21">
+          <properties>
+      <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/><property name="java.specification.version" value="11"/><property name="sun.cpu.isalist" value=""/><property name="sun.jnu.encoding" value="UTF-8"/><property name="sun.arch.data.model" value="64"/><property name="java.vendor.url" value="https://ubuntu.com/"/><property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/><property name="sun.java.command" value="/home/martins/.cache/sbt/boot/sbt-launch/1.10.5/sbt-launch-1.10.5.jar testOnly vexriscv.DhrystoneBench"/><property name="jdk.debug" value="release"/><property name="java.specification.vendor" value="Oracle Corporation"/><property name="java.version.date" value="2024-10-15"/><property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/><property name="file.separator" value="/"/><property name="java.vm.compressedOopsMode" value="32-bit"/><property name="line.separator" value="
+"/><property name="java.specification.name" value="Java Platform API Specification"/><property name="java.vm.specification.vendor" value="Oracle Corporation"/><property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/><property name="java.runtime.version" value="11.0.25+9-post-Ubuntu-1ubuntu122.04"/><property name="user.name" value="martins"/><property name="log4j.ignoreTCL" value="true"/><property name="file.encoding" value="UTF-8"/><property name="jnidispatch.path" value="/home/martins/.cache/JNA/temp/jna1132374527117905540.tmp"/><property name="jna.loaded" value="true"/><property name="java.io.tmpdir" value="/tmp"/><property name="java.version" value="11.0.25"/><property name="java.vm.specification.name" value="Java Virtual Machine Specification"/><property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/><property name="sun.os.patch.level" value="unknown"/><property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/><property name="java.vendor" value="Ubuntu"/><property name="java.specification.maintenance.version" value="3"/><property name="scala.ext.dirs" value="/home/martins/.sbt/1.0/java9-rt-ext-ubuntu_11_0_25"/><property name="sun.io.unicode.encoding" value="UnicodeLittle"/><property name="sun.desktop" value="gnome"/><property name="java.class.path" value="/home/martins/.cache/sbt/boot/sbt-launch/1.10.5/sbt-launch-1.10.5.jar"/><property name="java.vm.vendor" value="Ubuntu"/><property name="jline.shutdownhook" value="false"/><property name="user.timezone" value="America/Sao_Paulo"/><property name="os.name" value="Linux"/><property name="java.vm.specification.version" value="11"/><property name="sun.java.launcher" value="SUN_STANDARD"/><property name="user.country" value="US"/><property name="sun.cpu.endian" value="little"/><property name="user.home" value="/home/martins"/><property name="user.language" value="en"/><property name="sbt.script" value="/usr/bin/sbt"/><property name="swoval.tmpdir" value="/home/martins/.sbt/1.0"/><property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/><property name="jline.esc.timeout" value="0"/><property name="path.separator" value=":"/><property name="os.version" value="6.9.3-76060903-generic"/><property name="jna.nosys" value="true"/><property name="java.runtime.name" value="OpenJDK Runtime Environment"/><property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/><property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib64:/lib64:/usr/lib:/lib:/libx32:/lib32:/usr/lib/x86_64-linux-gnu/pipewire-0.3/jack:/usr/lib/x86_64-linux-gnu/libfakeroot"/><property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/><property name="user.dir" value="/home/martins/Documents/VexRiscv"/><property name="os.arch" value="amd64"/><property name="java.vm.info" value="mixed mode, sharing"/><property name="java.vm.version" value="11.0.25+9-post-Ubuntu-1ubuntu122.04"/><property name="java.class.version" value="55.0"/>
+    </properties>
+          <testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageArty_gen" time="1.055">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageArty_test" time="6.794">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageBarrielArty_gen" time="0.206">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageBarrielArty_test" time="6.145">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageMDArty_gen" time="0.235">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageMDArty_test" time="5.225">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageMDBarrielArty_gen" time="0.177">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenTwoStageMDBarrielArty_test" time="4.5">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageArty_gen" time="0.157">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageArty_test" time="7.303">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageBarrielArty_gen" time="0.138">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageBarrielArty_test" time="7.049">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageMDArty_gen" time="0.14">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageMDArty_test" time="5.546">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageMDBarrielArty_gen" time="0.169">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenThreeStageMDBarrielArty_test" time="5.091">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallestNoCsr_gen" time="0.103">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallestNoCsr_test" time="7.475">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallest_gen" time="0.134">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallest_test" time="7.244">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallAndProductive_gen" time="0.105">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallAndProductive_test" time="7.103">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallAndProductiveWithICache_gen" time="0.186">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenSmallAndProductiveWithICache_test" time="6.202">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFullNoMmuNoCache_gen" time="0.17">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFullNoMmuNoCache_test" time="5.953">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenNoCacheNoMmuMaxPerf_gen" time="0.16">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenNoCacheNoMmuMaxPerf_test" time="6.72">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFullNoMmuMaxPerf_gen" time="0.273">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFullNoMmuMaxPerf_test" time="6.89">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFullNoMmu_gen" time="0.204">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFullNoMmu_test" time="6.672">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFull_gen" time="0.275">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenFull_test" time="8.192">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenLinuxBalenced_gen" time="0.327">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="GenLinuxBalenced_test" time="8.876">
+                      
+                    </testcase><testcase classname="vexriscv.DhrystoneBench" name="final_report" time="0.0">
+                      
+                    </testcase>
+          <system-out><![CDATA[]]></system-out>
+          <system-err><![CDATA[]]></system-err>
+        </testsuite>
