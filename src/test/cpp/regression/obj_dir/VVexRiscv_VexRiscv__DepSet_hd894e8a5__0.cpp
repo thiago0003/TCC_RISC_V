@@ -14,7 +14,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5(VVexRiscv_VexR
     VVexRiscv__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+      VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5\n"); );
     // Init
-    IData/*31:0*/ __PVT__execute_FullBarrelShifterPlugin_reversed;
     CData/*4:0*/ __Vtableidx22;
     // Body
     if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuck)))) {
@@ -100,6 +99,16 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5(VVexRiscv_VexR
                                               | (0x1eU 
                                                  & (vlSelf->__PVT__decode_to_execute_INSTRUCTION 
                                                     >> 7U)))))))));
+    vlSelf->__PVT___zz_execute_SRC1 = ((0U == (IData)(vlSelf->__PVT__decode_to_execute_SRC1_CTRL))
+                                        ? vlSelf->__PVT__RegFilePlugin_regFile_spinal_port0
+                                        : ((2U == (IData)(vlSelf->__PVT__decode_to_execute_SRC1_CTRL))
+                                            ? 4U : 
+                                           ((1U == (IData)(vlSelf->__PVT__decode_to_execute_SRC1_CTRL))
+                                             ? (0xfffff000U 
+                                                & vlSelf->__PVT__decode_to_execute_INSTRUCTION)
+                                             : (0x1fU 
+                                                & (vlSelf->__PVT__decode_to_execute_INSTRUCTION 
+                                                   >> 0xfU)))));
     vlSelf->__PVT___zz_execute_SRC2_4 = ((0U == (IData)(vlSelf->__PVT__decode_to_execute_SRC2_CTRL))
                                           ? vlSelf->__PVT__RegFilePlugin_regFile_spinal_port1
                                           : ((1U == (IData)(vlSelf->__PVT__decode_to_execute_SRC2_CTRL))
@@ -123,100 +132,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5(VVexRiscv_VexR
                                                         & (vlSelf->__PVT__decode_to_execute_INSTRUCTION 
                                                            >> 7U))))
                                                   : vlSelf->__PVT__decode_to_execute_PC)));
-    vlSelf->__PVT___zz_execute_SRC1 = ((0U == (IData)(vlSelf->__PVT__decode_to_execute_SRC1_CTRL))
-                                        ? vlSelf->__PVT__RegFilePlugin_regFile_spinal_port0
-                                        : ((2U == (IData)(vlSelf->__PVT__decode_to_execute_SRC1_CTRL))
-                                            ? 4U : 
-                                           ((1U == (IData)(vlSelf->__PVT__decode_to_execute_SRC1_CTRL))
-                                             ? (0xfffff000U 
-                                                & vlSelf->__PVT__decode_to_execute_INSTRUCTION)
-                                             : (0x1fU 
-                                                & (vlSelf->__PVT__decode_to_execute_INSTRUCTION 
-                                                   >> 0xfU)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xfffffff8U & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((4U & (vlSelf->__PVT___zz_execute_SRC1 
-                     >> 0x1bU)) | ((2U & (vlSelf->__PVT___zz_execute_SRC1 
-                                          >> 0x1dU)) 
-                                   | (vlSelf->__PVT___zz_execute_SRC1 
-                                      >> 0x1fU))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xffffffc7U & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x20U & (vlSelf->__PVT___zz_execute_SRC1 
-                        >> 0x15U)) | ((0x10U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                >> 0x17U)) 
-                                      | (8U & (vlSelf->__PVT___zz_execute_SRC1 
-                                               >> 0x19U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xfffffe3fU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x100U & (vlSelf->__PVT___zz_execute_SRC1 
-                         >> 0xfU)) | ((0x80U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                >> 0x11U)) 
-                                      | (0x40U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                  >> 0x13U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xfffff1ffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x800U & (vlSelf->__PVT___zz_execute_SRC1 
-                         >> 9U)) | ((0x400U & (vlSelf->__PVT___zz_execute_SRC1 
-                                               >> 0xbU)) 
-                                    | (0x200U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                 >> 0xdU)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xffff8fffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x4000U & (vlSelf->__PVT___zz_execute_SRC1 
-                          >> 3U)) | ((0x2000U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                 >> 5U)) 
-                                     | (0x1000U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                   >> 7U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xfffc7fffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x20000U & (vlSelf->__PVT___zz_execute_SRC1 
-                           << 3U)) | ((0x10000U & (vlSelf->__PVT___zz_execute_SRC1 
-                                                   << 1U)) 
-                                      | (0x8000U & 
-                                         (vlSelf->__PVT___zz_execute_SRC1 
-                                          >> 1U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xffe3ffffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x100000U & (vlSelf->__PVT___zz_execute_SRC1 
-                            << 9U)) | ((0x80000U & 
-                                        (vlSelf->__PVT___zz_execute_SRC1 
-                                         << 7U)) | 
-                                       (0x40000U & 
-                                        (vlSelf->__PVT___zz_execute_SRC1 
-                                         << 5U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xff1fffffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x800000U & (vlSelf->__PVT___zz_execute_SRC1 
-                            << 0xfU)) | ((0x400000U 
-                                          & (vlSelf->__PVT___zz_execute_SRC1 
-                                             << 0xdU)) 
-                                         | (0x200000U 
-                                            & (vlSelf->__PVT___zz_execute_SRC1 
-                                               << 0xbU)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xf8ffffffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x4000000U & (vlSelf->__PVT___zz_execute_SRC1 
-                             << 0x15U)) | ((0x2000000U 
-                                            & (vlSelf->__PVT___zz_execute_SRC1 
-                                               << 0x13U)) 
-                                           | (0x1000000U 
-                                              & (vlSelf->__PVT___zz_execute_SRC1 
-                                                 << 0x11U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0xc7ffffffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((0x20000000U & (vlSelf->__PVT___zz_execute_SRC1 
-                              << 0x1bU)) | ((0x10000000U 
-                                             & (vlSelf->__PVT___zz_execute_SRC1 
-                                                << 0x19U)) 
-                                            | (0x8000000U 
-                                               & (vlSelf->__PVT___zz_execute_SRC1 
-                                                  << 0x17U)))));
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed 
-        = ((0x3fffffffU & vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed) 
-           | ((vlSelf->__PVT___zz_execute_SRC1 << 0x1fU) 
-              | (0x40000000U & (vlSelf->__PVT___zz_execute_SRC1 
-                                << 0x1dU))));
     vlSelf->__PVT__execute_SrcPlugin_addSub = ((vlSelf->__PVT___zz_execute_SRC1 
                                                 + ((IData)(vlSelf->__PVT__decode_to_execute_SRC_USE_SUB_LESS)
                                                     ? 
@@ -228,10 +143,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5(VVexRiscv_VexR
     if (vlSelf->__PVT__decode_to_execute_SRC2_FORCE_ZERO) {
         vlSelf->__PVT__execute_SrcPlugin_addSub = vlSelf->__PVT___zz_execute_SRC1;
     }
-    __PVT__execute_FullBarrelShifterPlugin_reversed 
-        = ((1U == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL))
-            ? vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed
-            : vlSelf->__PVT___zz_execute_SRC1);
     vlSelf->__PVT__execute_SrcPlugin_less = (1U & (
                                                    ((vlSelf->__PVT___zz_execute_SRC1 
                                                      >> 0x1fU) 
@@ -249,17 +160,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5(VVexRiscv_VexR
                                                      : 
                                                     (vlSelf->__PVT___zz_execute_SRC1 
                                                      >> 0x1fU))));
-    vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 = (0x1ffffffffULL 
-                                                & VL_SHIFTRS_QQI(33,33,5, 
-                                                                 (((QData)((IData)(
-                                                                                ((3U 
-                                                                                == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL)) 
-                                                                                & (__PVT__execute_FullBarrelShifterPlugin_reversed 
-                                                                                >> 0x1fU)))) 
-                                                                   << 0x20U) 
-                                                                  | (QData)((IData)(__PVT__execute_FullBarrelShifterPlugin_reversed))), 
-                                                                 (0x1fU 
-                                                                  & vlSelf->__PVT___zz_execute_SRC2_4)));
     __Vtableidx22 = (((vlSelf->__PVT___zz_execute_SRC1 
                        == vlSelf->__PVT___zz_execute_SRC2_4) 
                       << 4U) | (((IData)(vlSelf->__PVT__execute_SrcPlugin_less) 
@@ -267,99 +167,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__5(VVexRiscv_VexR
                                                  >> 0xcU))));
     vlSelf->__PVT___zz_execute_BRANCH_DO = VVexRiscv__ConstPool__TABLE_h1ee20e3d_0
         [__Vtableidx22];
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xfffffff8U & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((4U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                              >> 0x1dU)) << 2U)) | 
-              ((2U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                               >> 0x1eU)) << 1U)) | 
-               (1U & (IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                              >> 0x1fU))))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xffffffc7U & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x20U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                 >> 0x1aU)) << 5U)) 
-              | ((0x10U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                    >> 0x1bU)) << 4U)) 
-                 | (8U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                   >> 0x1cU)) << 3U)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xfffffe3fU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x100U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                  >> 0x17U)) << 8U)) 
-              | ((0x80U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                    >> 0x18U)) << 7U)) 
-                 | (0x40U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                      >> 0x19U)) << 6U)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xfffff1ffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x800U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                  >> 0x14U)) << 0xbU)) 
-              | ((0x400U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                     >> 0x15U)) << 0xaU)) 
-                 | (0x200U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                       >> 0x16U)) << 9U)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xffff8fffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x4000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                   >> 0x11U)) << 0xeU)) 
-              | ((0x2000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                      >> 0x12U)) << 0xdU)) 
-                 | (0x1000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                        >> 0x13U)) 
-                               << 0xcU)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xfffc7fffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x20000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                    >> 0xeU)) << 0x11U)) 
-              | ((0x10000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                       >> 0xfU)) << 0x10U)) 
-                 | (0x8000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                        >> 0x10U)) 
-                               << 0xfU)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xffe3ffffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x100000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                     >> 0xbU)) << 0x14U)) 
-              | ((0x80000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                       >> 0xcU)) << 0x13U)) 
-                 | (0x40000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                         >> 0xdU)) 
-                                << 0x12U)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xff1fffffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x800000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                     >> 8U)) << 0x17U)) 
-              | ((0x400000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                        >> 9U)) << 0x16U)) 
-                 | (0x200000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                          >> 0xaU)) 
-                                 << 0x15U)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xf8ffffffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x4000000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                      >> 5U)) << 0x1aU)) 
-              | ((0x2000000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                         >> 6U)) << 0x19U)) 
-                 | (0x1000000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                           >> 7U)) 
-                                  << 0x18U)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0xc7ffffffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | ((0x20000000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                       >> 2U)) << 0x1dU)) 
-              | ((0x10000000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                          >> 3U)) << 0x1cU)) 
-                 | (0x8000000U & ((IData)((vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                           >> 4U)) 
-                                  << 0x1bU)))));
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 
-        = ((0x3fffffffU & vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1) 
-           | (((IData)(vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1) 
-               << 0x1fU) | (0x40000000U & ((IData)(
-                                                   (vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 
-                                                    >> 1U)) 
-                                           << 0x1eU))));
 }
 
 extern const VlUnpacked<CData/*0:0*/, 128> VVexRiscv__ConstPool__TABLE_hebbe5b07_0;
@@ -375,6 +182,7 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__7(VVexRiscv_VexR
     CData/*0:0*/ __PVT__HazardSimplePlugin_src1Hazard;
     CData/*0:0*/ __PVT__when_HazardSimplePlugin_l57;
     CData/*0:0*/ __PVT__when_HazardSimplePlugin_l57_1;
+    IData/*31:0*/ __PVT__execute_LightShifterPlugin_shiftInput;
     IData/*31:0*/ __PVT___zz_CsrPlugin_csrMapping_readDataInit;
     IData/*31:0*/ __PVT___zz_CsrPlugin_csrMapping_readDataInit_2;
     CData/*6:0*/ __Vtableidx20;
@@ -453,6 +261,24 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__7(VVexRiscv_VexR
     }
     __PVT__when_HazardSimplePlugin_l57_1 = ((IData)(vlSelf->__PVT__memory_arbitration_isValid) 
                                             & (IData)(vlSelf->__PVT__execute_to_memory_REGFILE_WRITE_VALID));
+    if (vlSelf->__PVT__execute_LightShifterPlugin_isActive) {
+        __PVT__execute_LightShifterPlugin_shiftInput 
+            = vlSelf->__PVT__execute_to_memory_REGFILE_WRITE_DATA;
+        vlSelf->__PVT__execute_LightShifterPlugin_amplitude 
+            = (0x1fU & (IData)(vlSelf->__PVT__execute_LightShifterPlugin_amplitudeReg));
+    } else {
+        __PVT__execute_LightShifterPlugin_shiftInput 
+            = vlSelf->__PVT___zz_execute_SRC1;
+        vlSelf->__PVT__execute_LightShifterPlugin_amplitude 
+            = (0x1fU & vlSelf->__PVT___zz_execute_SRC2_4);
+    }
+    vlSelf->__PVT__when_ShiftPlugins_l169 = (((IData)(vlSelf->__PVT__execute_arbitration_isValid) 
+                                              & (0U 
+                                                 != (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL))) 
+                                             & (0U 
+                                                != 
+                                                (0x1fU 
+                                                 & vlSelf->__PVT___zz_execute_SRC2_4)));
     __PVT___zz_CsrPlugin_csrMapping_readDataInit = 0U;
     if (vlSelf->__PVT__execute_CsrPlugin_csr_768) {
         __PVT___zz_CsrPlugin_csrMapping_readDataInit 
@@ -567,14 +393,19 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__7(VVexRiscv_VexR
         vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA 
             = __PVT__CsrPlugin_csrMapping_readDataInit;
     }
-    if (vlSelf->__PVT__execute_arbitration_isValid) {
-        if ((1U == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL))) {
-            vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA 
-                = vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1;
-        } else if (((2U == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL)) 
-                    | (3U == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL)))) {
-            vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA 
-                = (IData)(vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1);
-        }
+    if (vlSelf->__PVT__when_ShiftPlugins_l169) {
+        vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA 
+            = ((1U == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL))
+                ? (__PVT__execute_LightShifterPlugin_shiftInput 
+                   << 1U) : (IData)((0x1ffffffffULL 
+                                     & ((0x7fffffff80000000ULL 
+                                         & ((QData)((IData)(
+                                                            ((3U 
+                                                              == (IData)(vlSelf->__PVT__decode_to_execute_SHIFT_CTRL)) 
+                                                             & (__PVT__execute_LightShifterPlugin_shiftInput 
+                                                                >> 0x1fU)))) 
+                                            << 0x1fU)) 
+                                        | ((QData)((IData)(__PVT__execute_LightShifterPlugin_shiftInput)) 
+                                           >> 1U)))));
     }
 }

@@ -29,8 +29,8 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
         vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo__DOT__io_push_rData_inst 
             = vlSymsp->TOP.iBus_rsp_payload_inst;
     }
-    vlSelf->__PVT__CsrPlugin_mip_MEIP = vlSymsp->TOP.externalInterrupt;
     vlSelf->__PVT__CsrPlugin_mip_MTIP = vlSymsp->TOP.timerInterrupt;
+    vlSelf->__PVT__CsrPlugin_mip_MEIP = vlSymsp->TOP.externalInterrupt;
     if (vlSelf->__PVT__when_CsrPlugin_l1390) {
         if ((3U == (IData)(vlSelf->__PVT__CsrPlugin_interrupt_targetPrivilege))) {
             vlSelf->__PVT__CsrPlugin_mcause_exceptionCode 
@@ -63,9 +63,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
         }
     }
     if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuck)))) {
-        vlSelf->__PVT__decode_to_execute_SHIFT_CTRL 
-            = (3U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
-                     >> 0x17U));
         vlSelf->__PVT__decode_to_execute_BRANCH_CTRL 
             = (3U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
                      >> 0x15U));
@@ -88,33 +85,42 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
         vlSelf->__PVT__decode_to_execute_IS_CSR = (1U 
                                                    & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
                                                       >> 0xdU));
+        vlSelf->__PVT__decode_to_execute_SHIFT_CTRL 
+            = (3U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
+                     >> 0x17U));
     }
-    vlSelf->__PVT__memory_to_writeBack_REGFILE_WRITE_DATA 
-        = vlSelf->__PVT__execute_to_memory_REGFILE_WRITE_DATA;
     vlSelf->__PVT__memory_to_writeBack_MEMORY_ADDRESS_LOW 
         = vlSelf->__PVT__execute_to_memory_MEMORY_ADDRESS_LOW;
-    vlSelf->__PVT__RegFilePlugin_regFile_spinal_port1 
-        = vlSelf->RegFilePlugin_regFile[(0x1fU & (vlSelf->__PVT__execute_RegFilePlugin_srcInstruction 
-                                                  >> 0x14U))];
     vlSelf->__PVT__RegFilePlugin_regFile_spinal_port0 
         = vlSelf->RegFilePlugin_regFile[(0x1fU & (vlSelf->__PVT__execute_RegFilePlugin_srcInstruction 
                                                   >> 0xfU))];
     if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuck)))) {
-        vlSelf->__PVT__decode_to_execute_SRC2_CTRL 
-            = (3U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
-                     >> 5U));
         vlSelf->__PVT__decode_to_execute_SRC1_CTRL 
             = (3U & vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED);
     }
+    vlSelf->__PVT__memory_to_writeBack_REGFILE_WRITE_DATA 
+        = vlSelf->__PVT__execute_to_memory_REGFILE_WRITE_DATA;
     vlSelf->__PVT__memory_to_writeBack_ENV_CTRL = vlSelf->__PVT__execute_to_memory_ENV_CTRL;
-    vlSelf->__PVT__memory_to_writeBack_PC = vlSelf->__PVT__execute_to_memory_PC;
+    if (vlSelf->__PVT__when_ShiftPlugins_l169) {
+        if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuckByOthers)))) {
+            vlSelf->__PVT__execute_LightShifterPlugin_amplitudeReg 
+                = (0x1fU & ((IData)(vlSelf->__PVT__execute_LightShifterPlugin_amplitude) 
+                            - (IData)(1U)));
+        }
+    }
     if ((1U & (~ (IData)(vlSelf->__PVT__memory_arbitration_haltItself)))) {
         vlSelf->__PVT__execute_to_memory_MEMORY_STORE 
             = vlSelf->__PVT__decode_to_execute_MEMORY_STORE;
     }
     vlSelf->__PVT__memory_to_writeBack_MEMORY_ENABLE 
         = vlSelf->__PVT__execute_to_memory_MEMORY_ENABLE;
+    vlSelf->__PVT__RegFilePlugin_regFile_spinal_port1 
+        = vlSelf->RegFilePlugin_regFile[(0x1fU & (vlSelf->__PVT__execute_RegFilePlugin_srcInstruction 
+                                                  >> 0x14U))];
     if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuck)))) {
+        vlSelf->__PVT__decode_to_execute_SRC2_CTRL 
+            = (3U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
+                     >> 5U));
         vlSelf->__PVT__decode_to_execute_RS2_USE = 
             (1U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
                    >> 0xcU));
@@ -122,6 +128,7 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
             (1U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
                    >> 4U));
     }
+    vlSelf->__PVT__memory_to_writeBack_PC = vlSelf->__PVT__execute_to_memory_PC;
     vlSelf->__PVT__HazardSimplePlugin_writeBackBuffer_payload_address 
         = (0x1fU & (vlSelf->__PVT__memory_to_writeBack_INSTRUCTION 
                     >> 7U));
@@ -155,10 +162,6 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
             = ((0xfffffff0U & vlSelf->__PVT___zz_CsrPlugin_csrMapping_readDataInit_3) 
                | (IData)(vlSelf->__PVT__CsrPlugin_mcause_exceptionCode));
     }
-    if ((1U & (~ (IData)(vlSelf->__PVT__memory_arbitration_haltItself)))) {
-        vlSelf->__PVT__execute_to_memory_REGFILE_WRITE_DATA 
-            = vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA;
-    }
     vlSelf->__PVT__writeBack_DBusSimplePlugin_rspShifted 
         = vlSelf->__PVT__memory_to_writeBack_MEMORY_READ_DATA;
     if ((1U == (IData)(vlSelf->__PVT__memory_to_writeBack_MEMORY_ADDRESS_LOW))) {
@@ -180,11 +183,14 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
     if ((1U & (~ (IData)(vlSelf->__PVT__memory_arbitration_haltItself)))) {
         vlSelf->__PVT__execute_to_memory_MEMORY_ADDRESS_LOW 
             = (3U & vlSelf->__PVT__execute_SrcPlugin_addSub);
+    }
+    if ((1U & ((~ (IData)(vlSelf->__PVT__memory_arbitration_haltItself)) 
+               & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuckByOthers))))) {
+        vlSelf->__PVT__execute_to_memory_REGFILE_WRITE_DATA 
+            = vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA;
+    }
+    if ((1U & (~ (IData)(vlSelf->__PVT__memory_arbitration_haltItself)))) {
         vlSelf->__PVT__execute_to_memory_ENV_CTRL = vlSelf->__PVT__decode_to_execute_ENV_CTRL;
-        vlSelf->lastStagePc = vlSelf->__PVT__memory_to_writeBack_PC;
-        vlSelf->__PVT__execute_to_memory_PC = vlSelf->__PVT__decode_to_execute_PC;
-    } else {
-        vlSelf->lastStagePc = vlSelf->__PVT__memory_to_writeBack_PC;
     }
     if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuck)))) {
         vlSelf->__PVT__decode_to_execute_MEMORY_STORE 
@@ -194,6 +200,10 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
     if ((1U & (~ (IData)(vlSelf->__PVT__memory_arbitration_haltItself)))) {
         vlSelf->__PVT__execute_to_memory_MEMORY_ENABLE 
             = vlSelf->__PVT__decode_to_execute_MEMORY_ENABLE;
+        vlSelf->lastStagePc = vlSelf->__PVT__memory_to_writeBack_PC;
+        vlSelf->__PVT__execute_to_memory_PC = vlSelf->__PVT__decode_to_execute_PC;
+    } else {
+        vlSelf->lastStagePc = vlSelf->__PVT__memory_to_writeBack_PC;
     }
     vlSelf->__PVT___zz_CsrPlugin_csrMapping_readDataInit_1 = 0U;
     if (vlSelf->__PVT__execute_CsrPlugin_csr_836) {
@@ -214,10 +224,10 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__3(VVexRiscv_VexR
         vlSelf->__PVT__decode_to_execute_ENV_CTRL = 
             (1U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
                    >> 0xeU));
-        vlSelf->__PVT__decode_to_execute_PC = vlSelf->IBusSimplePlugin_fetchPc_pcReg;
         vlSelf->__PVT__decode_to_execute_MEMORY_ENABLE 
             = (1U & (vlSelf->__PVT___zz_decode_SRC_LESS_UNSIGNED 
                      >> 3U));
+        vlSelf->__PVT__decode_to_execute_PC = vlSelf->IBusSimplePlugin_fetchPc_pcReg;
     }
 }
 
@@ -236,13 +246,14 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__4(VVexRiscv_VexR
     if (vlSymsp->TOP.reset) {
         vlSelf->__PVT__IBusSimplePlugin_fetchPc_inc = 0U;
         vlSelf->IBusSimplePlugin_fetchPc_pcReg = 0x80000000U;
-        vlSelf->__PVT__CsrPlugin_mie_MEIE = 0U;
         vlSelf->__PVT__CsrPlugin_mie_MTIE = 0U;
         vlSelf->__PVT__CsrPlugin_mie_MSIE = 0U;
+        vlSelf->__PVT__CsrPlugin_mie_MEIE = 0U;
         vlSelf->CsrPlugin_hadException = 0U;
         vlSelf->__PVT__CsrPlugin_interrupt_valid = 0U;
         vlSelf->__PVT___zz_IBusSimplePlugin_iBusRsp_stages_1_input_valid_1 = 0U;
         vlSelf->__PVT__CsrPlugin_pipelineLiberator_pcValids_2 = 0U;
+        vlSelf->__PVT__execute_LightShifterPlugin_isActive = 0U;
         __Vdly__IBusSimplePlugin_rspJoin_rspBuffer_discardCounter = 0U;
         vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo__DOT__io_push_rValid = 0U;
         vlSelf->__PVT__CsrPlugin_mstatus_MPP = 3U;
@@ -268,15 +279,15 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__4(VVexRiscv_VexR
         }
         if (vlSelf->__PVT__execute_CsrPlugin_csr_772) {
             if (vlSelf->__PVT__execute_CsrPlugin_writeEnable) {
-                vlSelf->__PVT__CsrPlugin_mie_MEIE = 
-                    (1U & (vlSelf->__PVT___zz_CsrPlugin_csrMapping_writeDataSignal 
-                           >> 0xbU));
                 vlSelf->__PVT__CsrPlugin_mie_MTIE = 
                     (1U & (vlSelf->__PVT___zz_CsrPlugin_csrMapping_writeDataSignal 
                            >> 7U));
                 vlSelf->__PVT__CsrPlugin_mie_MSIE = 
                     (1U & (vlSelf->__PVT___zz_CsrPlugin_csrMapping_writeDataSignal 
                            >> 3U));
+                vlSelf->__PVT__CsrPlugin_mie_MEIE = 
+                    (1U & (vlSelf->__PVT___zz_CsrPlugin_csrMapping_writeDataSignal 
+                           >> 0xbU));
             }
         }
         vlSelf->CsrPlugin_hadException = 0U;
@@ -309,6 +320,18 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___sequent__TOP__VexRiscv__4(VVexRiscv_VexR
         }
         if (vlSelf->__PVT__when_CsrPlugin_l1340) {
             vlSelf->__PVT__CsrPlugin_pipelineLiberator_pcValids_2 = 0U;
+        }
+        if (vlSelf->__PVT__when_ShiftPlugins_l169) {
+            if ((1U & (~ (IData)(vlSelf->__PVT__execute_arbitration_isStuckByOthers)))) {
+                vlSelf->__PVT__execute_LightShifterPlugin_isActive = 1U;
+                if ((0U == (0xfU & ((IData)(vlSelf->__PVT__execute_LightShifterPlugin_amplitude) 
+                                    >> 1U)))) {
+                    vlSelf->__PVT__execute_LightShifterPlugin_isActive = 0U;
+                }
+            }
+        }
+        if (vlSelf->__PVT__execute_arbitration_removeIt) {
+            vlSelf->__PVT__execute_LightShifterPlugin_isActive = 0U;
         }
         __Vdly__IBusSimplePlugin_rspJoin_rspBuffer_discardCounter 
             = (7U & ((IData)(vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_discardCounter) 
@@ -566,10 +589,14 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___combo__TOP__VexRiscv__6(VVexRiscv_VexRis
                                                               (0x58U 
                                                                & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)) 
                                                              << 0x15U) 
-                                                            | (((0x24U 
-                                                                 == 
-                                                                 (0x64U 
-                                                                  & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)) 
+                                                            | ((((0x24U 
+                                                                  == 
+                                                                  (0x64U 
+                                                                   & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)) 
+                                                                 | (0x1010U 
+                                                                    == 
+                                                                    (0x3054U 
+                                                                     & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst))) 
                                                                 << 0x14U) 
                                                                | (((0x1000U 
                                                                     == 
@@ -590,10 +617,14 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___combo__TOP__VexRiscv__6(VVexRiscv_VexRis
                                                                              (0x5000U 
                                                                               & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst))) 
                                                                          << 0x11U) 
-                                                                        | (((0x4000U 
-                                                                             == 
-                                                                             (0x4004U 
-                                                                              & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)) 
+                                                                        | ((((0x6000U 
+                                                                              == 
+                                                                              (0x6004U 
+                                                                               & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)) 
+                                                                             | (0x4000U 
+                                                                                == 
+                                                                                (0x5004U 
+                                                                                & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst))) 
                                                                             << 0x10U) 
                                                                            | (((0x2000U 
                                                                                 == 
@@ -726,7 +757,7 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___combo__TOP__VexRiscv__6(VVexRiscv_VexRis
                                                                                 & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)) 
                                                                                 | (0x40000030U 
                                                                                 == 
-                                                                                (0x40000034U 
+                                                                                (0x40004034U 
                                                                                 & vlSelf->__PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst)))) 
                                                                                 << 2U) 
                                                                                 | ((((4U 
@@ -801,6 +832,12 @@ VL_INLINE_OPT void VVexRiscv_VexRiscv___combo__TOP__VexRiscv__8(VVexRiscv_VexRis
         if ((((IData)(vlSelf->__PVT__writeBack_arbitration_isValid) 
               | (IData)(vlSelf->__PVT__memory_arbitration_isValid)) 
              | (IData)(vlSelf->__PVT__execute_arbitration_isStuckByOthers))) {
+            __PVT__execute_arbitration_haltItself = 1U;
+        }
+    }
+    if (vlSelf->__PVT__when_ShiftPlugins_l169) {
+        if ((0U != (0xfU & ((IData)(vlSelf->__PVT__execute_LightShifterPlugin_amplitude) 
+                            >> 1U)))) {
             __PVT__execute_arbitration_haltItself = 1U;
         }
     }

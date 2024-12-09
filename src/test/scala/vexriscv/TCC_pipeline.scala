@@ -101,14 +101,6 @@ class TCC_pipeline extends AnyFunSuite {
         )
     }
 
-
-    getDmips(
-        name = s"GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False",
-        gen = SpinalVerilog(Murax(MuraxConfig.default)),
-
-        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
-    )
-
     getDmips(
         name = s"GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: False",
         gen = SpinalVerilog(GenTwoThreeStage.cpu(
@@ -146,6 +138,28 @@ class TCC_pipeline extends AnyFunSuite {
         )),
 
         testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
+    )
+
+
+    getDmips(
+        name = s"GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False",
+        gen = SpinalVerilog(GenTwoThreeStage.cpu(
+            withMulDiv = false,
+            bypass = false,
+            barrielShifter = false,
+            withMemoryStage = true,
+            withWriteBackStage = true
+        )),
+
+        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
+    )
+
+
+    getDmips(
+        name = s"MURAX (RISC-V I)",
+        gen = SpinalVerilog(Murax(MuraxConfig.default)),
+
+        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
     )
 
     test("final_report") {

@@ -56,5 +56,5 @@ Str_1_Loc:           DHRYSTONE PROGRAM, 1'ST STRING
 Str_2_Loc:           DHRYSTONE PROGRAM, 2'ND STRING
         should be:   DHRYSTONE PROGRAM, 2'ND STRING
 
-Clock cycles=154823 
-DMIPS per Mhz:                              0.73
+Clock cycles=167423 
+DMIPS per Mhz:                              0.67

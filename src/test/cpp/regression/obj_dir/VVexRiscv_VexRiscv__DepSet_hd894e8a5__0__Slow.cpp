@@ -53,7 +53,6 @@ VL_ATTR_COLD void VVexRiscv_VexRiscv___ctor_var_reset(VVexRiscv_VexRiscv* vlSelf
     vlSelf->reset = VL_RAND_RESET_I(1);
     vlSelf->__PVT__RegFilePlugin_regFile_spinal_port0 = VL_RAND_RESET_I(32);
     vlSelf->__PVT__RegFilePlugin_regFile_spinal_port1 = VL_RAND_RESET_I(32);
-    vlSelf->__PVT___zz_execute_SHIFT_RIGHT_1 = VL_RAND_RESET_Q(33);
     vlSelf->__PVT___zz_IBusSimplePlugin_rspJoin_rspBuffer_discardCounter_1 = VL_RAND_RESET_I(1);
     vlSelf->__PVT___zz_1 = VL_RAND_RESET_I(1);
     vlSelf->__PVT__decode_REGFILE_WRITE_VALID = VL_RAND_RESET_I(1);
@@ -141,8 +140,10 @@ VL_ATTR_COLD void VVexRiscv_VexRiscv___ctor_var_reset(VVexRiscv_VexRiscv* vlSelf
     vlSelf->__PVT__HazardSimplePlugin_writeBackBuffer_payload_address = VL_RAND_RESET_I(5);
     vlSelf->__PVT___zz_execute_BRANCH_DO = VL_RAND_RESET_I(1);
     vlSelf->__PVT__execute_BranchPlugin_branchAdder = VL_RAND_RESET_I(32);
-    vlSelf->__PVT___zz_execute_FullBarrelShifterPlugin_reversed = VL_RAND_RESET_I(32);
-    vlSelf->__PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1 = VL_RAND_RESET_I(32);
+    vlSelf->__PVT__execute_LightShifterPlugin_isActive = VL_RAND_RESET_I(1);
+    vlSelf->__PVT__execute_LightShifterPlugin_amplitudeReg = VL_RAND_RESET_I(5);
+    vlSelf->__PVT__execute_LightShifterPlugin_amplitude = VL_RAND_RESET_I(5);
+    vlSelf->__PVT__when_ShiftPlugins_l169 = VL_RAND_RESET_I(1);
     vlSelf->__PVT__decode_to_execute_PC = VL_RAND_RESET_I(32);
     vlSelf->__PVT__execute_to_memory_PC = VL_RAND_RESET_I(32);
     vlSelf->__PVT__memory_to_writeBack_PC = VL_RAND_RESET_I(32);

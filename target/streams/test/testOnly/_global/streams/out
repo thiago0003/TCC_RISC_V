@@ -20,20 +20,22 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: True - BarrielShifter: True_test[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: False - BarrielShifter: True_gen[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenThreeStage (RISC-V I) - Bypass: False - BarrielShifter: True_test[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False_gen[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False_test[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: False_gen[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: False_test[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: True_gen[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: True_test[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: True_gen[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: True_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False_test[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- MURAX (RISC-V I)_gen[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- MURAX (RISC-V I)_test[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- final_report[0m[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 25 events.[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 minute, 34 seconds.[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 25[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 27 events.[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 minute, 28 seconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 27[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 25, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 27, failed 0, canceled 0, ignored 0, pending 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	vexriscv.TCC_pipeline[0m

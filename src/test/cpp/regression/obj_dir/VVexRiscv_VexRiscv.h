@@ -102,6 +102,10 @@ VL_MODULE(VVexRiscv_VexRiscv) {
         CData/*0:0*/ __PVT__HazardSimplePlugin_writeBackBuffer_valid;
         CData/*4:0*/ __PVT__HazardSimplePlugin_writeBackBuffer_payload_address;
         CData/*0:0*/ __PVT___zz_execute_BRANCH_DO;
+        CData/*0:0*/ __PVT__execute_LightShifterPlugin_isActive;
+        CData/*4:0*/ __PVT__execute_LightShifterPlugin_amplitudeReg;
+        CData/*4:0*/ __PVT__execute_LightShifterPlugin_amplitude;
+        CData/*0:0*/ __PVT__when_ShiftPlugins_l169;
         CData/*0:0*/ __PVT__decode_to_execute_CSR_WRITE_OPCODE;
         CData/*1:0*/ __PVT__decode_to_execute_SRC1_CTRL;
         CData/*0:0*/ __PVT__decode_to_execute_SRC_USE_SUB_LESS;
@@ -140,12 +144,12 @@ VL_MODULE(VVexRiscv_VexRiscv) {
         CData/*0:0*/ __Vdly__CsrPlugin_mstatus_MIE;
         IData/*29:0*/ __Vxrand_h4700d425__0;
         IData/*31:0*/ __Vxrand_h9700cf2a__0;
+    };
+    struct {
         VL_OUT(iBus_cmd_payload_pc,31,0);
         VL_IN(iBus_rsp_payload_inst,31,0);
         VL_OUT(dBus_cmd_payload_address,31,0);
         VL_OUT(dBus_cmd_payload_data,31,0);
-    };
-    struct {
         VL_IN(dBus_rsp_data,31,0);
         IData/*31:0*/ __PVT__RegFilePlugin_regFile_spinal_port0;
         IData/*31:0*/ __PVT__RegFilePlugin_regFile_spinal_port1;
@@ -166,8 +170,6 @@ VL_MODULE(VVexRiscv_VexRiscv) {
         IData/*31:0*/ __PVT___zz_execute_SRC2_4;
         IData/*31:0*/ __PVT__execute_SrcPlugin_addSub;
         IData/*31:0*/ __PVT__execute_BranchPlugin_branchAdder;
-        IData/*31:0*/ __PVT___zz_execute_FullBarrelShifterPlugin_reversed;
-        IData/*31:0*/ __PVT___zz_execute_to_memory_REGFILE_WRITE_DATA_1;
         IData/*31:0*/ __PVT__decode_to_execute_PC;
         IData/*31:0*/ __PVT__execute_to_memory_PC;
         IData/*31:0*/ __PVT__memory_to_writeBack_PC;
@@ -181,7 +183,6 @@ VL_MODULE(VVexRiscv_VexRiscv) {
         IData/*31:0*/ __PVT___zz_CsrPlugin_csrMapping_readDataInit_3;
         IData/*31:0*/ __PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo_io_pop_payload_inst;
         IData/*31:0*/ __PVT__IBusSimplePlugin_rspJoin_rspBuffer_c__DOT__fifo__DOT__io_push_rData_inst;
-        QData/*32:0*/ __PVT___zz_execute_SHIFT_RIGHT_1;
         VlUnpacked<IData/*31:0*/, 32> RegFilePlugin_regFile;
     };
 

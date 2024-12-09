@@ -235,7 +235,7 @@ case class Murax(config : MuraxConfig) extends Component{
     val cpu = new VexRiscv(
       config = VexRiscvConfig(
         withMemoryStage = true,
-        withWriteBackStage = false,
+        withWriteBackStage = true,
         plugins = cpuPlugins += new DebugPlugin(debugClockDomain, hardwareBreakpointCount)
       )
     )
