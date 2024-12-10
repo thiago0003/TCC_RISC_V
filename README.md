@@ -2,7 +2,7 @@
 
 ## Como rodar os testes regressivos já criados 
 
-Para esse caso, foram criados 3 processaores com os diferentes estágios (2, 3 e 4), no teste localizado em `src/scala/vexriscv/TCC_pipeline` foram colocado os casos bypass e barrielShifter, permutando-os para crias os diferentes cenários.
+Para esse caso, foram criados 3 processaores com os diferentes estágios (2, 3 e 4), no teste localizado em [`src/test/scala/vexriscv/`](src/test/scala/vexriscv/) foram colocado os casos bypass e barrielShifter, permutando-os para crias os diferentes cenários.
 
 `sbt "testOnly vexriscv.TCC_pipeline"`
 
