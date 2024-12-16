@@ -1,6 +1,6 @@
 // Generator : SpinalHDL v1.10.2a    git head : a348a60b7e8b6a455c72e1536ec3d74a2ea16935
 // Component : Murax
-// Git hash  : 0bbe72f04168b9c1c658c26b08ffb994cb39197a
+// Git hash  : c9b2b6be1fedefa687360af2bf30c73ad7a60e17
 
 `timescale 1ns/1ps
 
@@ -11,9 +11,9 @@ module Murax (
   input  wire          io_jtag_tdi,
   output wire          io_jtag_tdo,
   input  wire          io_jtag_tck,
-  input  wire [31:0]   io_gpioA_read,
-  output wire [31:0]   io_gpioA_write,
-  output wire [31:0]   io_gpioA_writeEnable,
+  input  wire [0:0]    io_gpioA_read,
+  output wire [0:0]    io_gpioA_write,
+  output wire [0:0]    io_gpioA_writeEnable,
   output wire          io_uart_txd,
   input  wire          io_uart_rxd
 );
@@ -78,9 +78,9 @@ module Murax (
   wire                system_gpioACtrl_io_apb_PREADY;
   wire       [31:0]   system_gpioACtrl_io_apb_PRDATA;
   wire                system_gpioACtrl_io_apb_PSLVERROR;
-  wire       [31:0]   system_gpioACtrl_io_gpio_write;
-  wire       [31:0]   system_gpioACtrl_io_gpio_writeEnable;
-  wire       [31:0]   system_gpioACtrl_io_value;
+  wire       [0:0]    system_gpioACtrl_io_gpio_write;
+  wire       [0:0]    system_gpioACtrl_io_gpio_writeEnable;
+  wire       [0:0]    system_gpioACtrl_io_value;
   wire                system_uartCtrl_io_apb_PREADY;
   wire       [31:0]   system_uartCtrl_io_apb_PRDATA;
   wire                system_uartCtrl_io_uart_txd;
@@ -118,9 +118,9 @@ module Murax (
   reg        [31:0]   _zz_system_mainBusDecoder_logic_masterPipelined_rsp_payload_data;
   reg                 resetCtrl_mainClkResetUnbuffered;
   reg        [5:0]    resetCtrl_systemClkResetCounter;
-  wire       [5:0]    _zz_when_Murax_l196;
-  wire                when_Murax_l196;
-  wire                when_Murax_l200;
+  wire       [5:0]    _zz_when_Murax_l194;
+  wire                when_Murax_l194;
+  wire                when_Murax_l198;
   reg                 resetCtrl_mainClkReset;
   reg                 resetCtrl_systemReset;
   reg                 system_timerInterrupt;
@@ -295,20 +295,20 @@ module Murax (
     .resetCtrl_systemReset                     (resetCtrl_systemReset                                                )  //i
   );
   Apb3Gpio system_gpioACtrl (
-    .io_apb_PADDR          (system_gpioACtrl_io_apb_PADDR[3:0]        ), //i
-    .io_apb_PSEL           (apb3Router_1_io_outputs_0_PSEL            ), //i
-    .io_apb_PENABLE        (apb3Router_1_io_outputs_0_PENABLE         ), //i
-    .io_apb_PREADY         (system_gpioACtrl_io_apb_PREADY            ), //o
-    .io_apb_PWRITE         (apb3Router_1_io_outputs_0_PWRITE          ), //i
-    .io_apb_PWDATA         (apb3Router_1_io_outputs_0_PWDATA[31:0]    ), //i
-    .io_apb_PRDATA         (system_gpioACtrl_io_apb_PRDATA[31:0]      ), //o
-    .io_apb_PSLVERROR      (system_gpioACtrl_io_apb_PSLVERROR         ), //o
-    .io_gpio_read          (io_gpioA_read[31:0]                       ), //i
-    .io_gpio_write         (system_gpioACtrl_io_gpio_write[31:0]      ), //o
-    .io_gpio_writeEnable   (system_gpioACtrl_io_gpio_writeEnable[31:0]), //o
-    .io_value              (system_gpioACtrl_io_value[31:0]           ), //o
-    .io_mainClk            (io_mainClk                                ), //i
-    .resetCtrl_systemReset (resetCtrl_systemReset                     )  //i
+    .io_apb_PADDR          (system_gpioACtrl_io_apb_PADDR[3:0]    ), //i
+    .io_apb_PSEL           (apb3Router_1_io_outputs_0_PSEL        ), //i
+    .io_apb_PENABLE        (apb3Router_1_io_outputs_0_PENABLE     ), //i
+    .io_apb_PREADY         (system_gpioACtrl_io_apb_PREADY        ), //o
+    .io_apb_PWRITE         (apb3Router_1_io_outputs_0_PWRITE      ), //i
+    .io_apb_PWDATA         (apb3Router_1_io_outputs_0_PWDATA[31:0]), //i
+    .io_apb_PRDATA         (system_gpioACtrl_io_apb_PRDATA[31:0]  ), //o
+    .io_apb_PSLVERROR      (system_gpioACtrl_io_apb_PSLVERROR     ), //o
+    .io_gpio_read          (io_gpioA_read                         ), //i
+    .io_gpio_write         (system_gpioACtrl_io_gpio_write        ), //o
+    .io_gpio_writeEnable   (system_gpioACtrl_io_gpio_writeEnable  ), //o
+    .io_value              (system_gpioACtrl_io_value             ), //o
+    .io_mainClk            (io_mainClk                            ), //i
+    .resetCtrl_systemReset (resetCtrl_systemReset                 )  //i
   );
   Apb3UartCtrl system_uartCtrl (
     .io_apb_PADDR          (system_uartCtrl_io_apb_PADDR[4:0]     ), //i
@@ -404,14 +404,14 @@ module Murax (
 
   always @(*) begin
     resetCtrl_mainClkResetUnbuffered = 1'b0;
-    if(when_Murax_l196) begin
+    if(when_Murax_l194) begin
       resetCtrl_mainClkResetUnbuffered = 1'b1;
     end
   end
 
-  assign _zz_when_Murax_l196[5 : 0] = 6'h3f;
-  assign when_Murax_l196 = (resetCtrl_systemClkResetCounter != _zz_when_Murax_l196);
-  assign when_Murax_l200 = io_asyncReset_buffercc_io_dataOut;
+  assign _zz_when_Murax_l194[5 : 0] = 6'h3f;
+  assign when_Murax_l194 = (resetCtrl_systemClkResetCounter != _zz_when_Murax_l194);
+  assign when_Murax_l198 = io_asyncReset_buffercc_io_dataOut;
   always @(*) begin
     system_timerInterrupt = 1'b0;
     if(system_timer_io_interrupt) begin
@@ -481,10 +481,10 @@ module Murax (
   assign system_mainBusDecoder_logic_masterPipelined_rsp_payload_data = _zz_system_mainBusDecoder_logic_masterPipelined_rsp_payload_data;
   assign when_MuraxUtiles_l133 = (system_mainBusDecoder_logic_rspPending && (! system_mainBusDecoder_logic_masterPipelined_rsp_valid));
   always @(posedge io_mainClk) begin
-    if(when_Murax_l196) begin
+    if(when_Murax_l194) begin
       resetCtrl_systemClkResetCounter <= (resetCtrl_systemClkResetCounter + 6'h01);
     end
-    if(when_Murax_l200) begin
+    if(when_Murax_l198) begin
       resetCtrl_systemClkResetCounter <= 6'h0;
     end
   end
@@ -1074,7 +1074,7 @@ module Apb3UartCtrl (
   function [19:0] zz_bridge_uartConfigReg_clockDivider(input dummy);
     begin
       zz_bridge_uartConfigReg_clockDivider = 20'h0;
-      zz_bridge_uartConfigReg_clockDivider = 20'h00059;
+      zz_bridge_uartConfigReg_clockDivider = 20'h00013;
     end
   endfunction
   wire [19:0] _zz_1;
@@ -1382,29 +1382,29 @@ module Apb3Gpio (
   input  wire [31:0]   io_apb_PWDATA,
   output reg  [31:0]   io_apb_PRDATA,
   output wire          io_apb_PSLVERROR,
-  input  wire [31:0]   io_gpio_read,
-  output wire [31:0]   io_gpio_write,
-  output wire [31:0]   io_gpio_writeEnable,
-  output wire [31:0]   io_value,
+  input  wire [0:0]    io_gpio_read,
+  output wire [0:0]    io_gpio_write,
+  output wire [0:0]    io_gpio_writeEnable,
+  output wire [0:0]    io_value,
   input  wire          io_mainClk,
   input  wire          resetCtrl_systemReset
 );
 
-  wire       [31:0]   io_gpio_read_buffercc_io_dataOut;
+  wire       [0:0]    io_gpio_read_buffercc_io_dataOut;
   wire                ctrl_readErrorFlag;
   wire                ctrl_writeErrorFlag;
   wire                ctrl_askWrite;
   wire                ctrl_askRead;
   wire                ctrl_doWrite;
   wire                ctrl_doRead;
-  reg        [31:0]   io_gpio_write_driver;
-  reg        [31:0]   io_gpio_writeEnable_driver;
+  reg        [0:0]    io_gpio_write_driver;
+  reg        [0:0]    io_gpio_writeEnable_driver;
 
   (* keep_hierarchy = "TRUE" *) BufferCC_1 io_gpio_read_buffercc (
-    .io_dataIn             (io_gpio_read[31:0]                    ), //i
-    .io_dataOut            (io_gpio_read_buffercc_io_dataOut[31:0]), //o
-    .io_mainClk            (io_mainClk                            ), //i
-    .resetCtrl_systemReset (resetCtrl_systemReset                 )  //i
+    .io_dataIn             (io_gpio_read                    ), //i
+    .io_dataOut            (io_gpio_read_buffercc_io_dataOut), //o
+    .io_mainClk            (io_mainClk                      ), //i
+    .resetCtrl_systemReset (resetCtrl_systemReset           )  //i
   );
   assign io_value = io_gpio_read_buffercc_io_dataOut;
   assign ctrl_readErrorFlag = 1'b0;
@@ -1414,13 +1414,13 @@ module Apb3Gpio (
     io_apb_PRDATA = 32'h0;
     case(io_apb_PADDR)
       4'b0000 : begin
-        io_apb_PRDATA[31 : 0] = io_value;
+        io_apb_PRDATA[0 : 0] = io_value;
       end
       4'b0100 : begin
-        io_apb_PRDATA[31 : 0] = io_gpio_write_driver;
+        io_apb_PRDATA[0 : 0] = io_gpio_write_driver;
       end
       4'b1000 : begin
-        io_apb_PRDATA[31 : 0] = io_gpio_writeEnable_driver;
+        io_apb_PRDATA[0 : 0] = io_gpio_writeEnable_driver;
       end
       default : begin
       end
@@ -1436,12 +1436,12 @@ module Apb3Gpio (
   assign io_gpio_writeEnable = io_gpio_writeEnable_driver;
   always @(posedge io_mainClk or posedge resetCtrl_systemReset) begin
     if(resetCtrl_systemReset) begin
-      io_gpio_writeEnable_driver <= 32'h0;
+      io_gpio_writeEnable_driver <= 1'b0;
     end else begin
       case(io_apb_PADDR)
         4'b1000 : begin
           if(ctrl_doWrite) begin
-            io_gpio_writeEnable_driver <= io_apb_PWDATA[31 : 0];
+            io_gpio_writeEnable_driver <= io_apb_PWDATA[0 : 0];
           end
         end
         default : begin
@@ -1454,7 +1454,7 @@ module Apb3Gpio (
     case(io_apb_PADDR)
       4'b0100 : begin
         if(ctrl_doWrite) begin
-          io_gpio_write_driver <= io_apb_PWDATA[31 : 0];
+          io_gpio_write_driver <= io_apb_PWDATA[0 : 0];
         end
       end
       default : begin
@@ -2652,8 +2652,8 @@ module VexRiscv (
   wire       [31:0]   _zz_execute_SrcPlugin_addSub_2;
   wire       [31:0]   _zz_execute_SrcPlugin_addSub_3;
   wire       [31:0]   _zz_execute_SrcPlugin_addSub_4;
-  wire       [31:0]   _zz__zz_execute_to_memory_REGFILE_WRITE_DATA_1;
-  wire       [32:0]   _zz__zz_execute_to_memory_REGFILE_WRITE_DATA_1_1;
+  wire       [31:0]   _zz__zz_decode_RS2_3;
+  wire       [32:0]   _zz__zz_decode_RS2_3_1;
   wire       [19:0]   _zz__zz_execute_BranchPlugin_branch_src2;
   wire       [11:0]   _zz__zz_execute_BranchPlugin_branch_src2_4;
   wire       [31:0]   memory_MEMORY_READ_DATA;
@@ -2667,8 +2667,6 @@ module VexRiscv (
   wire       [31:0]   decode_SRC2;
   wire       [31:0]   decode_SRC1;
   wire                decode_SRC2_FORCE_ZERO;
-  wire       [31:0]   decode_RS2;
-  wire       [31:0]   decode_RS1;
   wire       [1:0]    decode_BRANCH_CTRL;
   wire       [1:0]    _zz_decode_BRANCH_CTRL;
   wire       [1:0]    _zz_decode_to_execute_BRANCH_CTRL;
@@ -2719,10 +2717,13 @@ module VexRiscv (
   wire                decode_RS1_USE;
   wire                execute_REGFILE_WRITE_VALID;
   wire                execute_BYPASSABLE_EXECUTE_STAGE;
+  wire       [31:0]   _zz_decode_RS2;
   wire                memory_REGFILE_WRITE_VALID;
   wire       [31:0]   memory_INSTRUCTION;
   wire                memory_BYPASSABLE_MEMORY_STAGE;
   wire                writeBack_REGFILE_WRITE_VALID;
+  reg        [31:0]   decode_RS2;
+  reg        [31:0]   decode_RS1;
   wire       [31:0]   memory_REGFILE_WRITE_DATA;
   wire       [1:0]    execute_SHIFT_CTRL;
   wire       [1:0]    _zz_execute_SHIFT_CTRL;
@@ -2757,7 +2758,7 @@ module VexRiscv (
   wire       [0:0]    _zz_decode_ENV_CTRL_1;
   wire       [1:0]    _zz_decode_SRC2_CTRL_1;
   wire       [1:0]    _zz_decode_SRC1_CTRL_1;
-  reg        [31:0]   _zz_execute_to_memory_REGFILE_WRITE_DATA;
+  reg        [31:0]   _zz_decode_RS2_1;
   wire       [31:0]   execute_SRC1;
   wire                execute_CSR_READ_OPCODE;
   wire                execute_CSR_WRITE_OPCODE;
@@ -2768,7 +2769,7 @@ module VexRiscv (
   wire       [0:0]    _zz_execute_ENV_CTRL;
   wire       [0:0]    writeBack_ENV_CTRL;
   wire       [0:0]    _zz_writeBack_ENV_CTRL;
-  reg        [31:0]   _zz_lastStageRegFileWrite_payload_data;
+  reg        [31:0]   _zz_decode_RS2_2;
   wire                writeBack_MEMORY_ENABLE;
   wire       [1:0]    writeBack_MEMORY_ADDRESS_LOW;
   wire       [31:0]   writeBack_MEMORY_READ_DATA;
@@ -3113,7 +3114,7 @@ module VexRiscv (
   wire       [31:0]   execute_LightShifterPlugin_shiftInput;
   wire                execute_LightShifterPlugin_done;
   wire                when_ShiftPlugins_l169;
-  reg        [31:0]   _zz_execute_to_memory_REGFILE_WRITE_DATA_1;
+  reg        [31:0]   _zz_decode_RS2_3;
   wire                when_ShiftPlugins_l175;
   wire                when_ShiftPlugins_l184;
   reg                 HazardSimplePlugin_src0Hazard;
@@ -3126,16 +3127,20 @@ module VexRiscv (
   reg        [31:0]   HazardSimplePlugin_writeBackBuffer_payload_data;
   wire                HazardSimplePlugin_addr0Match;
   wire                HazardSimplePlugin_addr1Match;
-  wire                when_HazardSimplePlugin_l59;
-  wire                when_HazardSimplePlugin_l62;
+  wire                when_HazardSimplePlugin_l47;
+  wire                when_HazardSimplePlugin_l48;
+  wire                when_HazardSimplePlugin_l51;
+  wire                when_HazardSimplePlugin_l45;
   wire                when_HazardSimplePlugin_l57;
   wire                when_HazardSimplePlugin_l58;
-  wire                when_HazardSimplePlugin_l59_1;
-  wire                when_HazardSimplePlugin_l62_1;
+  wire                when_HazardSimplePlugin_l48_1;
+  wire                when_HazardSimplePlugin_l51_1;
+  wire                when_HazardSimplePlugin_l45_1;
   wire                when_HazardSimplePlugin_l57_1;
   wire                when_HazardSimplePlugin_l58_1;
-  wire                when_HazardSimplePlugin_l59_2;
-  wire                when_HazardSimplePlugin_l62_2;
+  wire                when_HazardSimplePlugin_l48_2;
+  wire                when_HazardSimplePlugin_l51_2;
+  wire                when_HazardSimplePlugin_l45_2;
   wire                when_HazardSimplePlugin_l57_2;
   wire                when_HazardSimplePlugin_l58_2;
   wire                when_HazardSimplePlugin_l105;
@@ -3390,8 +3395,8 @@ module VexRiscv (
   assign _zz_execute_SrcPlugin_addSub_2 = execute_SRC1;
   assign _zz_execute_SrcPlugin_addSub_3 = (execute_SRC_USE_SUB_LESS ? (~ execute_SRC2) : execute_SRC2);
   assign _zz_execute_SrcPlugin_addSub_4 = (execute_SRC_USE_SUB_LESS ? 32'h00000001 : 32'h0);
-  assign _zz__zz_execute_to_memory_REGFILE_WRITE_DATA_1 = (_zz__zz_execute_to_memory_REGFILE_WRITE_DATA_1_1 >>> 1'd1);
-  assign _zz__zz_execute_to_memory_REGFILE_WRITE_DATA_1_1 = {((execute_SHIFT_CTRL == ShiftCtrlEnum_SRA_1) && execute_LightShifterPlugin_shiftInput[31]),execute_LightShifterPlugin_shiftInput};
+  assign _zz__zz_decode_RS2_3 = (_zz__zz_decode_RS2_3_1 >>> 1'd1);
+  assign _zz__zz_decode_RS2_3_1 = {((execute_SHIFT_CTRL == ShiftCtrlEnum_SRA_1) && execute_LightShifterPlugin_shiftInput[31]),execute_LightShifterPlugin_shiftInput};
   assign _zz__zz_execute_BranchPlugin_branch_src2 = {{{execute_INSTRUCTION[31],execute_INSTRUCTION[19 : 12]},execute_INSTRUCTION[20]},execute_INSTRUCTION[30 : 21]};
   assign _zz__zz_execute_BranchPlugin_branch_src2_4 = {{{execute_INSTRUCTION[31],execute_INSTRUCTION[7]},execute_INSTRUCTION[30 : 25]},execute_INSTRUCTION[11 : 8]};
   assign _zz_decode_RegFilePlugin_rs1Data = 1'b1;
@@ -4041,8 +4046,6 @@ module VexRiscv (
   assign decode_SRC2 = _zz_decode_SRC2_4;
   assign decode_SRC1 = _zz_decode_SRC1;
   assign decode_SRC2_FORCE_ZERO = (decode_SRC_ADD_ZERO && (! decode_SRC_USE_SUB_LESS));
-  assign decode_RS2 = decode_RegFilePlugin_rs2Data;
-  assign decode_RS1 = decode_RegFilePlugin_rs1Data;
   assign decode_BRANCH_CTRL = _zz_decode_BRANCH_CTRL;
   assign _zz_decode_to_execute_BRANCH_CTRL = _zz_decode_to_execute_BRANCH_CTRL_1;
   assign decode_SHIFT_CTRL = _zz_decode_SHIFT_CTRL;
@@ -4080,10 +4083,71 @@ module VexRiscv (
   assign decode_RS1_USE = _zz_decode_SRC_LESS_UNSIGNED[4];
   assign execute_REGFILE_WRITE_VALID = decode_to_execute_REGFILE_WRITE_VALID;
   assign execute_BYPASSABLE_EXECUTE_STAGE = decode_to_execute_BYPASSABLE_EXECUTE_STAGE;
+  assign _zz_decode_RS2 = memory_REGFILE_WRITE_DATA;
   assign memory_REGFILE_WRITE_VALID = execute_to_memory_REGFILE_WRITE_VALID;
   assign memory_INSTRUCTION = execute_to_memory_INSTRUCTION;
   assign memory_BYPASSABLE_MEMORY_STAGE = execute_to_memory_BYPASSABLE_MEMORY_STAGE;
   assign writeBack_REGFILE_WRITE_VALID = memory_to_writeBack_REGFILE_WRITE_VALID;
+  always @(*) begin
+    decode_RS2 = decode_RegFilePlugin_rs2Data;
+    if(HazardSimplePlugin_writeBackBuffer_valid) begin
+      if(HazardSimplePlugin_addr1Match) begin
+        decode_RS2 = HazardSimplePlugin_writeBackBuffer_payload_data;
+      end
+    end
+    if(when_HazardSimplePlugin_l45) begin
+      if(when_HazardSimplePlugin_l47) begin
+        if(when_HazardSimplePlugin_l51) begin
+          decode_RS2 = _zz_decode_RS2_2;
+        end
+      end
+    end
+    if(when_HazardSimplePlugin_l45_1) begin
+      if(memory_BYPASSABLE_MEMORY_STAGE) begin
+        if(when_HazardSimplePlugin_l51_1) begin
+          decode_RS2 = _zz_decode_RS2;
+        end
+      end
+    end
+    if(when_HazardSimplePlugin_l45_2) begin
+      if(execute_BYPASSABLE_EXECUTE_STAGE) begin
+        if(when_HazardSimplePlugin_l51_2) begin
+          decode_RS2 = _zz_decode_RS2_1;
+        end
+      end
+    end
+  end
+
+  always @(*) begin
+    decode_RS1 = decode_RegFilePlugin_rs1Data;
+    if(HazardSimplePlugin_writeBackBuffer_valid) begin
+      if(HazardSimplePlugin_addr0Match) begin
+        decode_RS1 = HazardSimplePlugin_writeBackBuffer_payload_data;
+      end
+    end
+    if(when_HazardSimplePlugin_l45) begin
+      if(when_HazardSimplePlugin_l47) begin
+        if(when_HazardSimplePlugin_l48) begin
+          decode_RS1 = _zz_decode_RS2_2;
+        end
+      end
+    end
+    if(when_HazardSimplePlugin_l45_1) begin
+      if(memory_BYPASSABLE_MEMORY_STAGE) begin
+        if(when_HazardSimplePlugin_l48_1) begin
+          decode_RS1 = _zz_decode_RS2;
+        end
+      end
+    end
+    if(when_HazardSimplePlugin_l45_2) begin
+      if(execute_BYPASSABLE_EXECUTE_STAGE) begin
+        if(when_HazardSimplePlugin_l48_2) begin
+          decode_RS1 = _zz_decode_RS2_1;
+        end
+      end
+    end
+  end
+
   assign memory_REGFILE_WRITE_DATA = execute_to_memory_REGFILE_WRITE_DATA;
   assign execute_SHIFT_CTRL = _zz_execute_SHIFT_CTRL;
   assign execute_SRC_LESS_UNSIGNED = decode_to_execute_SRC_LESS_UNSIGNED;
@@ -4119,12 +4183,12 @@ module VexRiscv (
   end
 
   always @(*) begin
-    _zz_execute_to_memory_REGFILE_WRITE_DATA = execute_REGFILE_WRITE_DATA;
+    _zz_decode_RS2_1 = execute_REGFILE_WRITE_DATA;
     if(when_CsrPlugin_l1587) begin
-      _zz_execute_to_memory_REGFILE_WRITE_DATA = CsrPlugin_csrMapping_readDataSignal;
+      _zz_decode_RS2_1 = CsrPlugin_csrMapping_readDataSignal;
     end
     if(when_ShiftPlugins_l169) begin
-      _zz_execute_to_memory_REGFILE_WRITE_DATA = _zz_execute_to_memory_REGFILE_WRITE_DATA_1;
+      _zz_decode_RS2_1 = _zz_decode_RS2_3;
     end
   end
 
@@ -4136,9 +4200,9 @@ module VexRiscv (
   assign execute_ENV_CTRL = _zz_execute_ENV_CTRL;
   assign writeBack_ENV_CTRL = _zz_writeBack_ENV_CTRL;
   always @(*) begin
-    _zz_lastStageRegFileWrite_payload_data = writeBack_REGFILE_WRITE_DATA;
+    _zz_decode_RS2_2 = writeBack_REGFILE_WRITE_DATA;
     if(when_DBusSimplePlugin_l565) begin
-      _zz_lastStageRegFileWrite_payload_data = writeBack_DBusSimplePlugin_rspFormated;
+      _zz_decode_RS2_2 = writeBack_DBusSimplePlugin_rspFormated;
     end
   end
 
@@ -4885,7 +4949,7 @@ module VexRiscv (
   end
 
   always @(*) begin
-    lastStageRegFileWrite_payload_data = _zz_lastStageRegFileWrite_payload_data;
+    lastStageRegFileWrite_payload_data = _zz_decode_RS2_2;
     if(_zz_5) begin
       lastStageRegFileWrite_payload_data = 32'h0;
     end
@@ -5017,10 +5081,10 @@ module VexRiscv (
   always @(*) begin
     case(execute_SHIFT_CTRL)
       ShiftCtrlEnum_SLL_1 : begin
-        _zz_execute_to_memory_REGFILE_WRITE_DATA_1 = (execute_LightShifterPlugin_shiftInput <<< 1);
+        _zz_decode_RS2_3 = (execute_LightShifterPlugin_shiftInput <<< 1);
       end
       default : begin
-        _zz_execute_to_memory_REGFILE_WRITE_DATA_1 = _zz__zz_execute_to_memory_REGFILE_WRITE_DATA_1;
+        _zz_decode_RS2_3 = _zz__zz_decode_RS2_3;
       end
     endcase
   end
@@ -5029,28 +5093,23 @@ module VexRiscv (
   assign when_ShiftPlugins_l184 = (! execute_LightShifterPlugin_done);
   always @(*) begin
     HazardSimplePlugin_src0Hazard = 1'b0;
-    if(HazardSimplePlugin_writeBackBuffer_valid) begin
-      if(HazardSimplePlugin_addr0Match) begin
-        HazardSimplePlugin_src0Hazard = 1'b1;
-      end
-    end
     if(when_HazardSimplePlugin_l57) begin
       if(when_HazardSimplePlugin_l58) begin
-        if(when_HazardSimplePlugin_l59) begin
+        if(when_HazardSimplePlugin_l48) begin
           HazardSimplePlugin_src0Hazard = 1'b1;
         end
       end
     end
     if(when_HazardSimplePlugin_l57_1) begin
       if(when_HazardSimplePlugin_l58_1) begin
-        if(when_HazardSimplePlugin_l59_1) begin
+        if(when_HazardSimplePlugin_l48_1) begin
           HazardSimplePlugin_src0Hazard = 1'b1;
         end
       end
     end
     if(when_HazardSimplePlugin_l57_2) begin
       if(when_HazardSimplePlugin_l58_2) begin
-        if(when_HazardSimplePlugin_l59_2) begin
+        if(when_HazardSimplePlugin_l48_2) begin
           HazardSimplePlugin_src0Hazard = 1'b1;
         end
       end
@@ -5062,28 +5121,23 @@ module VexRiscv (
 
   always @(*) begin
     HazardSimplePlugin_src1Hazard = 1'b0;
-    if(HazardSimplePlugin_writeBackBuffer_valid) begin
-      if(HazardSimplePlugin_addr1Match) begin
-        HazardSimplePlugin_src1Hazard = 1'b1;
-      end
-    end
     if(when_HazardSimplePlugin_l57) begin
       if(when_HazardSimplePlugin_l58) begin
-        if(when_HazardSimplePlugin_l62) begin
+        if(when_HazardSimplePlugin_l51) begin
           HazardSimplePlugin_src1Hazard = 1'b1;
         end
       end
     end
     if(when_HazardSimplePlugin_l57_1) begin
       if(when_HazardSimplePlugin_l58_1) begin
-        if(when_HazardSimplePlugin_l62_1) begin
+        if(when_HazardSimplePlugin_l51_1) begin
           HazardSimplePlugin_src1Hazard = 1'b1;
         end
       end
     end
     if(when_HazardSimplePlugin_l57_2) begin
       if(when_HazardSimplePlugin_l58_2) begin
-        if(when_HazardSimplePlugin_l62_2) begin
+        if(when_HazardSimplePlugin_l51_2) begin
           HazardSimplePlugin_src1Hazard = 1'b1;
         end
       end
@@ -5095,21 +5149,25 @@ module VexRiscv (
 
   assign HazardSimplePlugin_writeBackWrites_valid = (_zz_lastStageRegFileWrite_valid && writeBack_arbitration_isFiring);
   assign HazardSimplePlugin_writeBackWrites_payload_address = _zz_lastStageRegFileWrite_payload_address[11 : 7];
-  assign HazardSimplePlugin_writeBackWrites_payload_data = _zz_lastStageRegFileWrite_payload_data;
+  assign HazardSimplePlugin_writeBackWrites_payload_data = _zz_decode_RS2_2;
   assign HazardSimplePlugin_addr0Match = (HazardSimplePlugin_writeBackBuffer_payload_address == decode_INSTRUCTION[19 : 15]);
   assign HazardSimplePlugin_addr1Match = (HazardSimplePlugin_writeBackBuffer_payload_address == decode_INSTRUCTION[24 : 20]);
-  assign when_HazardSimplePlugin_l59 = (writeBack_INSTRUCTION[11 : 7] == decode_INSTRUCTION[19 : 15]);
-  assign when_HazardSimplePlugin_l62 = (writeBack_INSTRUCTION[11 : 7] == decode_INSTRUCTION[24 : 20]);
+  assign when_HazardSimplePlugin_l47 = 1'b1;
+  assign when_HazardSimplePlugin_l48 = (writeBack_INSTRUCTION[11 : 7] == decode_INSTRUCTION[19 : 15]);
+  assign when_HazardSimplePlugin_l51 = (writeBack_INSTRUCTION[11 : 7] == decode_INSTRUCTION[24 : 20]);
+  assign when_HazardSimplePlugin_l45 = (writeBack_arbitration_isValid && writeBack_REGFILE_WRITE_VALID);
   assign when_HazardSimplePlugin_l57 = (writeBack_arbitration_isValid && writeBack_REGFILE_WRITE_VALID);
-  assign when_HazardSimplePlugin_l58 = (1'b1 || (! 1'b1));
-  assign when_HazardSimplePlugin_l59_1 = (memory_INSTRUCTION[11 : 7] == decode_INSTRUCTION[19 : 15]);
-  assign when_HazardSimplePlugin_l62_1 = (memory_INSTRUCTION[11 : 7] == decode_INSTRUCTION[24 : 20]);
+  assign when_HazardSimplePlugin_l58 = (1'b0 || (! when_HazardSimplePlugin_l47));
+  assign when_HazardSimplePlugin_l48_1 = (memory_INSTRUCTION[11 : 7] == decode_INSTRUCTION[19 : 15]);
+  assign when_HazardSimplePlugin_l51_1 = (memory_INSTRUCTION[11 : 7] == decode_INSTRUCTION[24 : 20]);
+  assign when_HazardSimplePlugin_l45_1 = (memory_arbitration_isValid && memory_REGFILE_WRITE_VALID);
   assign when_HazardSimplePlugin_l57_1 = (memory_arbitration_isValid && memory_REGFILE_WRITE_VALID);
-  assign when_HazardSimplePlugin_l58_1 = (1'b1 || (! memory_BYPASSABLE_MEMORY_STAGE));
-  assign when_HazardSimplePlugin_l59_2 = (execute_INSTRUCTION[11 : 7] == decode_INSTRUCTION[19 : 15]);
-  assign when_HazardSimplePlugin_l62_2 = (execute_INSTRUCTION[11 : 7] == decode_INSTRUCTION[24 : 20]);
+  assign when_HazardSimplePlugin_l58_1 = (1'b0 || (! memory_BYPASSABLE_MEMORY_STAGE));
+  assign when_HazardSimplePlugin_l48_2 = (execute_INSTRUCTION[11 : 7] == decode_INSTRUCTION[19 : 15]);
+  assign when_HazardSimplePlugin_l51_2 = (execute_INSTRUCTION[11 : 7] == decode_INSTRUCTION[24 : 20]);
+  assign when_HazardSimplePlugin_l45_2 = (execute_arbitration_isValid && execute_REGFILE_WRITE_VALID);
   assign when_HazardSimplePlugin_l57_2 = (execute_arbitration_isValid && execute_REGFILE_WRITE_VALID);
-  assign when_HazardSimplePlugin_l58_2 = (1'b1 || (! execute_BYPASSABLE_EXECUTE_STAGE));
+  assign when_HazardSimplePlugin_l58_2 = (1'b0 || (! execute_BYPASSABLE_EXECUTE_STAGE));
   assign when_HazardSimplePlugin_l105 = (! decode_RS1_USE);
   assign when_HazardSimplePlugin_l108 = (! decode_RS2_USE);
   assign when_HazardSimplePlugin_l113 = (decode_arbitration_isValid && (HazardSimplePlugin_src0Hazard || HazardSimplePlugin_src1Hazard));
@@ -5891,10 +5949,10 @@ module VexRiscv (
       memory_to_writeBack_MEMORY_ADDRESS_LOW <= memory_MEMORY_ADDRESS_LOW;
     end
     if(when_Pipeline_l124_40) begin
-      execute_to_memory_REGFILE_WRITE_DATA <= _zz_execute_to_memory_REGFILE_WRITE_DATA;
+      execute_to_memory_REGFILE_WRITE_DATA <= _zz_decode_RS2_1;
     end
     if(when_Pipeline_l124_41) begin
-      memory_to_writeBack_REGFILE_WRITE_DATA <= memory_REGFILE_WRITE_DATA;
+      memory_to_writeBack_REGFILE_WRITE_DATA <= _zz_decode_RS2;
     end
     if(when_Pipeline_l124_42) begin
       execute_to_memory_BRANCH_DO <= execute_BRANCH_DO;
@@ -5935,7 +5993,7 @@ module VexRiscv (
     DebugPlugin_secondCycle <= DebugPlugin_firstCycle;
     DebugPlugin_isPipBusy <= ((|{writeBack_arbitration_isValid,{memory_arbitration_isValid,{execute_arbitration_isValid,decode_arbitration_isValid}}}) || IBusSimplePlugin_incomingInstruction);
     if(writeBack_arbitration_isValid) begin
-      DebugPlugin_busReadDataReg <= _zz_lastStageRegFileWrite_payload_data;
+      DebugPlugin_busReadDataReg <= _zz_decode_RS2_2;
     end
     _zz_when_DebugPlugin_l257 <= debug_bus_cmd_payload_address[2];
     if(when_DebugPlugin_l308) begin
@@ -6512,14 +6570,14 @@ module UartCtrl (
 endmodule
 
 module BufferCC_1 (
-  input  wire [31:0]   io_dataIn,
-  output wire [31:0]   io_dataOut,
+  input  wire [0:0]    io_dataIn,
+  output wire [0:0]    io_dataOut,
   input  wire          io_mainClk,
   input  wire          resetCtrl_systemReset
 );
 
-  (* async_reg = "true" *) reg        [31:0]   buffers_0;
-  (* async_reg = "true" *) reg        [31:0]   buffers_1;
+  (* async_reg = "true" *) reg        [0:0]    buffers_0;
+  (* async_reg = "true" *) reg        [0:0]    buffers_1;
 
   assign io_dataOut = buffers_1;
   always @(posedge io_mainClk) begin

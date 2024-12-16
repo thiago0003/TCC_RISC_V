@@ -1,2 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0mone deprecation (since SpinalHDL 1.3.1); re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/martins/Documents/VexRiscv/src/test/scala/vexriscv/MuraxSim.scala:36:23: value jtag is not a member of spinal.core.Bundle{val asyncReset: spinal.core.Bool; val mainClk: spinal.core.Bool; val gpioA: spinal.lib.io.TriStateArray; val uart: spinal.lib.com.uart.Uart; val xip: spinal.lib.com.spi.ddr.SpiXdrMaster}[0m
+[0m[[0m[31merror[0m] [0m[0m        jtag = dut.io.jtag,[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

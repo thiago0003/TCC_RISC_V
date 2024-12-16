@@ -53,18 +53,16 @@ case class MuraxConfig(coreFrequency : HertzNumber,
 
 }
 
-
-
 object MuraxConfig{
-  def default : MuraxConfig = default(false, false)
-  def default(withXip : Boolean = false, bigEndian : Boolean = false) =  MuraxConfig(
-    coreFrequency         = 52 MHz,
+  def default : MuraxConfig = default(false, false, false, false)
+  def default(withXip : Boolean = false, bigEndian : Boolean = false, bypass : Boolean = false, barrielShifter : Boolean = false) =  MuraxConfig(
+    coreFrequency         = 12 MHz,
     onChipRamSize         = 8 kB,
     onChipRamHexFile      = null,
     pipelineDBus          = true,
     pipelineMainBus       = false,
     pipelineApbBridge     = true,
-    gpioWidth = 32,
+    gpioWidth = 1,
     xipConfig = ifGen(withXip) (SpiXdrMasterCtrl.MemoryMappingParameters(
       SpiXdrMasterCtrl.Parameters(8, 12, SpiXdrParameter(2, 2, 1)).addFullDuplex(0,1,false),
       cmdFifoDepth = 32,
@@ -86,7 +84,7 @@ object MuraxConfig{
       new DBusSimplePlugin(
         catchAddressMisaligned = false,
         catchAccessFault = false,
-        earlyInjection = false,
+        //earlyInjection = false,
         bigEndian = bigEndian
       ),
       new CsrPlugin(CsrPluginConfig.smallest(mtvecInit = if(withXip) 0xE0040020l else 0x80000020l)),
@@ -102,22 +100,30 @@ object MuraxConfig{
         separatedAddSub = false,
         executeInsertion = false
       ),
-      new LightShifterPlugin,
+      //new LightShifterPlugin,
       new HazardSimplePlugin(
-        bypassExecute = false,
-        bypassMemory = false,
-        bypassWriteBack = false,
-        bypassWriteBackBuffer = false,
+        bypassExecute = bypass,
+        bypassMemory = bypass,
+        bypassWriteBack = bypass,
+        bypassWriteBackBuffer = bypass,
         pessimisticUseSrc = false,
         pessimisticWriteRegFile = false,
         pessimisticAddressMatch = false
       ),
       new BranchPlugin(
-        earlyBranch = false,
+        earlyBranch = true,
         catchAddressMisaligned = false
       ),
       new YamlPlugin("cpu0.yaml")
-    ),
+    ) ++ List(if(!barrielShifter)
+        new LightShifterPlugin
+      else
+        new FullBarrelShifterPlugin(
+          earlyInjection = true
+        )
+      )
+    
+    ,
     uartCtrlConfig = UartCtrlMemoryMappedConfig(
       uartCtrlConfig = UartCtrlGenerics(
         dataWidthMax      = 8,
@@ -232,18 +238,17 @@ case class Murax(config : MuraxConfig) extends Component{
     val mainBusArbiter = new MuraxMasterArbiter(pipelinedMemoryBusConfig, bigEndianDBus)
 
     //Instanciate the CPU
+    //Instanciate the CPU
     val cpu = new VexRiscv(
       config = VexRiscvConfig(
-        withMemoryStage = true,
-        withWriteBackStage = true,
+        withMemoryStage = false,
+        withWriteBackStage = false,
         plugins = cpuPlugins += new DebugPlugin(debugClockDomain, hardwareBreakpointCount)
       )
     )
 
     // Acessar o pipeline
     println(s"Número de estágios no pipeline: ${cpu.stages.length}")
-
-
 
     //Checkout plugins used to instanciate the CPU to connect them to the SoC
     val timerInterrupt = False

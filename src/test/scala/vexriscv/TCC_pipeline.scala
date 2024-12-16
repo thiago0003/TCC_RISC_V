@@ -5,6 +5,8 @@ import java.io.File
 import org.scalatest.funsuite.AnyFunSuite
 import spinal.core.SpinalVerilog
 import vexriscv.demo._
+import vexriscv.demo.BrieySim
+
 
 import scala.sys.process._
 
@@ -50,115 +52,17 @@ class TCC_pipeline extends AnyFunSuite {
 
     }
 
-    for(withMemoryStage <- List(false, true)){
-        val stages = if(withMemoryStage) "Three" else "Two"
-        getDmips(
-            name = s"Gen${stages}Stage (RISC-V I) - Bypass: False - BarrielShifter: False",
-            gen = SpinalVerilog(GenTwoThreeStage.cpu(
-                withMulDiv = false,
-                bypass = false,
-                barrielShifter = false,
-                withMemoryStage = withMemoryStage
-            )),
-
-            testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
-        )
-
-        getDmips(
-            name = s"Gen${stages}Stage (RISC-V I) - Bypass: True - BarrielShifter: False",
-            gen = SpinalVerilog(GenTwoThreeStage.cpu(
-                withMulDiv = false,
-                bypass = true,
-                barrielShifter = false,
-                withMemoryStage = withMemoryStage
-            )),
-
-            testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
-        )
-
-        getDmips(
-            name = s"Gen${stages}Stage (RISC-V I) - Bypass: True - BarrielShifter: True",
-            gen = SpinalVerilog(GenTwoThreeStage.cpu(
-                withMulDiv = false,
-                bypass = true,
-                barrielShifter = true,
-                withMemoryStage = withMemoryStage
-            )),
-
-            testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
-        )
-
-        getDmips(
-            name = s"Gen${stages}Stage (RISC-V I) - Bypass: False - BarrielShifter: True",
-            gen = SpinalVerilog(GenTwoThreeStage.cpu(
-                withMulDiv = false,
-                bypass = false,
-                barrielShifter = true,
-                withMemoryStage = withMemoryStage
-            )),
-
-            testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
-        )
-    }
-
-    getDmips(
-        name = s"GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: False",
-        gen = SpinalVerilog(GenTwoThreeStage.cpu(
-            withMulDiv = false,
-            bypass = true,
-            barrielShifter = false,
-            withMemoryStage = true,
-            withWriteBackStage = true
-        )),
-
-        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
-    )
-
-    getDmips(
-        name = s"GenFourStage (RISC-V I) - Bypass: True - BarrielShifter: True",
-        gen = SpinalVerilog(GenTwoThreeStage.cpu(
-            withMulDiv = false,
-            bypass = true,
-            barrielShifter = true,
-            withMemoryStage = true,
-            withWriteBackStage = true
-        )),
-
-        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
-    )
-
-    getDmips(
-        name = s"GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: True",
-        gen = SpinalVerilog(GenTwoThreeStage.cpu(
-            withMulDiv = false,
-            bypass = false,
-            barrielShifter = true,
-            withMemoryStage = true,
-            withWriteBackStage = true
-        )),
-
-        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
-    )
-
-
-    getDmips(
-        name = s"GenFourStage (RISC-V I) - Bypass: False - BarrielShifter: False",
-        gen = SpinalVerilog(GenTwoThreeStage.cpu(
-            withMulDiv = false,
-            bypass = false,
-            barrielShifter = false,
-            withMemoryStage = true,
-            withWriteBackStage = true
-        )),
-
-        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no  COREMARK=yes"
-    )
-
 
     getDmips(
         name = s"MURAX (RISC-V I)",
         gen = SpinalVerilog(Murax(MuraxConfig.default)),
 
+        testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
+    )
+
+    getDmips(
+        name = s"Briey (RISC-V I)",
+        gen = SpinalVerilog(new Briey(BrieyConfig.default)),
         testCmd = "make clean run REDO=10 IBUS=SIMPLE DBUS=SIMPLE CSR=no MMU=no DEBUG_PLUGIN=no MUL=no DIV=no COREMARK=yes"
     )
 

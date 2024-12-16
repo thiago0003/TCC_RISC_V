@@ -295,6 +295,9 @@ class Briey(val config: BrieyConfig) extends Component{
       )
 
       val cpu = new VexRiscv(config)
+
+      println(s"Número de estágios no pipeline: ${cpu.stages.length}")
+
       var iBus : Axi4ReadOnly = null
       var dBus : Axi4Shared = null
       for(plugin <- config.plugins) plugin match{

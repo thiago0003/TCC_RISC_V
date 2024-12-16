@@ -1,6 +1,6 @@
 // Generator : SpinalHDL v1.10.2a    git head : a348a60b7e8b6a455c72e1536ec3d74a2ea16935
 // Component : Briey
-// Git hash  : bd9e062abeec3a208f5112960ebef61bc5a80884
+// Git hash  : c9b2b6be1fedefa687360af2bf30c73ad7a60e17
 
 `timescale 1ns/1ps
 
@@ -14066,7 +14066,7 @@ module VgaCtrl (
   input  wire [11:0]   io_timings_v_colorStart,
   input  wire [11:0]   io_timings_v_colorEnd,
   input  wire          io_timings_v_polarity,
-  output wire          io_frameStart /* verilator public */ ,
+  output wire          io_frameStart,
   input  wire          io_pixels_valid,
   output wire          io_pixels_ready,
   input  wire [4:0]    io_pixels_payload_r,
@@ -14078,7 +14078,7 @@ module VgaCtrl (
   output wire [4:0]    io_vga_color_r,
   output wire [5:0]    io_vga_color_g,
   output wire [4:0]    io_vga_color_b,
-  output wire          io_error /* verilator public */ ,
+  output wire          io_error,
   input  wire          io_vgaClk,
   input  wire          resetCtrl_vgaReset
 );
