@@ -51,10 +51,10 @@ case class MuraxConfig(coreFrequency : HertzNumber,
   require(pipelineApbBridge || pipelineMainBus, "At least pipelineMainBus or pipelineApbBridge should be enable to avoid wipe transactions")
   val genXip = xipConfig != null
 
-}
+} 
 
 object MuraxConfig{
-  def default : MuraxConfig = default(false, false, false, false)
+  def default : MuraxConfig = default(false, false, false, true)
   def default(withXip : Boolean = false, bigEndian : Boolean = false, bypass : Boolean = false, barrielShifter : Boolean = false) =  MuraxConfig(
     coreFrequency         = 12 MHz,
     onChipRamSize         = 8 kB,
@@ -111,7 +111,7 @@ object MuraxConfig{
         pessimisticAddressMatch = false
       ),
       new BranchPlugin(
-        earlyBranch = true,
+        earlyBranch = false,
         catchAddressMisaligned = false
       ),
       new YamlPlugin("cpu0.yaml")
@@ -241,7 +241,7 @@ case class Murax(config : MuraxConfig) extends Component{
     //Instanciate the CPU
     val cpu = new VexRiscv(
       config = VexRiscvConfig(
-        withMemoryStage = false,
+        withMemoryStage = true,
         withWriteBackStage = false,
         plugins = cpuPlugins += new DebugPlugin(debugClockDomain, hardwareBreakpointCount)
       )
